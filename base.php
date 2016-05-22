@@ -21,9 +21,10 @@ use Roots\Sage\Wrapper;
       .sidebar {
         padding: 1rem;
       }
-
     </style>
-
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+<![endif]-->
     <?php
       do_action('get_header');
       get_template_part('templates/header');
