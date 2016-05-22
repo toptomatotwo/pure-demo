@@ -21,6 +21,16 @@ use Roots\Sage\Wrapper;
       .sidebar {
         padding: 1rem;
       }
+
+      .site-title {
+        margin-top: 1.4rem;
+        font-family: 'IntroHead', monotype;
+        font-size: 4rem;
+      }
+
+      .site-description {
+        font-family: 'Typewriter', monotype;
+      }
     </style>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">

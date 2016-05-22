@@ -513,5 +513,20 @@ li > a:only-child:after { content: ''; }
 
 }
 
+/* Type
+*/
 
+@font-face {
+	font-family: 'Typewriter';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/American Typewriter.ttf');
+}
+
+@font-face {
+	font-family: 'IntroHead';
+	font-style: bold;
+	font-weight: 700;
+	src: url('../fonts/introheadb-h2base-webfont.ttf');
+}
 
