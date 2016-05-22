@@ -14,12 +14,22 @@ use Roots\Sage\Wrapper;
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'pure-demo'); ?>
       </div>
     <![endif]-->
+    <style type="text/css">
+      .main {
+        padding: 1rem;
+      }
+      .sidebar {
+        padding: 1rem;
+      }
+
+    </style>
+
     <?php
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap pure-g" role="document">
-      <div class="content">
+    <div class="wrap" role="document">
+      <div class="content pure-g">
         <main class="main pure-u-1 pure-u-md-4-5">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->

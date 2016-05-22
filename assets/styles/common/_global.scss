@@ -23,6 +23,10 @@ This theme, like WordPress, is licensed under the GPL.
 	box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 a {
 	text-decoration: none;
 	color: rgb(61, 146, 201);
@@ -413,10 +417,6 @@ img.aligncenter {
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @import url(http://fonts.googleapis.com/css?family=Bree+Serif);
 
-
-p {
-	text-align: center;
-}
 
 nav {
 	margin: .7em 0;
