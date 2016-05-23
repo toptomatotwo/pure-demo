@@ -29,7 +29,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: rgb(61, 146, 201);
+	color: rgba(125, 149, 155, 1);
 }
 a:hover,
 a:focus {
@@ -106,14 +106,12 @@ code {
 
 .site-title {
 	text-transform: uppercase;
-}
-
-.site-title a {
 	color: #fff;
 }
+
 .site-title a:hover,
 .site-title a:focus {
-	color: rgb(61, 146, 201);
+	color: rgba(125, 149, 155, 1);
 	text-decoration: none;
 }
 .site-description {
@@ -270,10 +268,10 @@ ul.post-categories li {
 	text-align: center;
 	padding: 1em 0;
 	font-size: 80%;
-	color: #aaa;
+	color: #666;
 }
 .site-footer a {
-	color: #ccc;
+	color: #999;
 }
 .site-footer .pure-menu-list li {
 	display: inline-block;
