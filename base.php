@@ -30,8 +30,11 @@ use Roots\Sage\Wrapper;
         font-size: 4rem;
       }
 
+      h1, h2, h3, h4 {
+        font-family: 'IntroHead', monotype;
+      }
       .site-description {
-        font-family: 'Typewriter', monotype;
+        font-family: 'TypewriterLite', monotype;
       }
 
       .header {
@@ -41,6 +44,10 @@ use Roots\Sage\Wrapper;
         <?php if ( preg_match('/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/', $theme_settings['primary_text_color'])): ?>
           color: <?= $theme_settings['primary_text_color']; ?>
         <?php endif; ?>;
+      }
+
+      p, span {
+        font-family: Helvetica, Verdana, sans-serif;
       }
     </style>
 
