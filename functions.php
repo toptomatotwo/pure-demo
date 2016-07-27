@@ -16,7 +16,37 @@ $sage_includes = [
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
-  'lib/theme-options.php' // Add a couple of options for the theme
+  //'lib/theme-options.php' // Add a couple of options for the theme
+  //'lib/options.php' // Add a couple of options for the theme
+  /**
+ * Helper library for the theme customizer.
+ */
+'extensions/customizer-library/customizer-library.php',
+
+/**
+ * Define options for the theme customizer.
+ */
+'extensions/customizer-options.php',
+
+/**
+ * Sets up the options panel and default functions
+ */
+'extensions/mods.php',
+
+/**
+ * Adds general template functions
+ */
+'extensions/template-helpers.php',
+
+/**
+ * Adds general portfolio functions
+ */
+'extensions/portfolio-helpers.php',
+
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+'extensions/extras.php'
 ];
 
 foreach ($sage_includes as $file) {
@@ -27,3 +57,5 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
