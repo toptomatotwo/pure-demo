@@ -18,7 +18,7 @@ $sage_includes = [
   'lib/customizer.php', // Theme customizer
   'lib/include-kirki.php', // Add a mess of options for the theme
   'lib/pure-demo-kirki.php', // Include kirki classes
-  'lib/pure-demo-kirki-config.php' //
+  'lib/pure-demo-kirki-config.php' // Include our custom Kirki Configuration File
 ];
 
 foreach ($sage_includes as $file) {
