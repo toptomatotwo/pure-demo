@@ -551,13 +551,20 @@ add_filter( 'kirki/config', 'kirki_demo_configuration_sample' );
 		}
 		//add_action( 'customize_register', 'add_any_font_register' );
 
+/**
+ * Darkens the color a bit
+ */
+function kirki_twentytwelve_alter_color( $color ) {
+    return Kirki_Color::adjust_brightness( $color, -50 );
+}
+
 function kirki_site_typography_fields( $fields ) {
 
-
+	// See this post for details on output as array: https://github.com/aristath/kirki/issues/585
   $fields[] = array(
 		'type'        => 'typography',
-		'settings'    => 'site_title_typography',
-		'label'       => __( 'Site Title', 'pure-demo' ),
+		'settings'    => 'site_title_typography_small',
+		'label'       => __( 'Site Title Small Screens', 'pure-demo' ),
 		'description' => __( 'Select type face for Site Title', 'pure-demo' ),
 		'help'        => __( 'This is the BIG MAIN title of the website. If you want to upload a custom font, not included in the list below, try the Use Any Font plugin: https://wordpress.org/plugins/use-any-font', 'pure-demo' ),
 		'section'     => 'site_typography',
@@ -578,7 +585,82 @@ function kirki_site_typography_fields( $fields ) {
 			'line-height'    => true,
 			'letter-spacing' => true,
 		),
-		'output'  => '.site-title'
+		'output' => array(
+											array(
+													'element'     => '.site-title',
+													'property'    => 'font-size',
+													'units'       => 'px',
+													//'media_query' => '@media screen and (min-width: 35.5em)',
+											),
+									),
+	);
+
+		  $fields[] = array(
+		'type'        => 'typography',
+		'settings'    => 'site_title_typography_medium',
+		'label'       => __( 'Site Title Medium Screens', 'pure-demo' ),
+		'description' => __( 'Select type face for Site Title', 'pure-demo' ),
+		'help'        => __( 'This is the BIG MAIN title of the website. If you want to upload a custom font, not included in the list below, try the Use Any Font plugin: https://wordpress.org/plugins/use-any-font', 'pure-demo' ),
+		'section'     => 'site_typography',
+		'default'     => array(
+			'font-style'     => array( 'bold', 'italic' ),
+			'font-family'    => 'Roboto',
+			'font-size'      => '68',
+			'font-weight'    => '400',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
+		),
+		'priority'    => 0,
+		'choices'     => array(
+			'font-style'     => false,
+			'font-family'    => false,
+			'font-size'      => true,
+			'font-weight'    => false,
+			'line-height'    => false,
+			'letter-spacing' => false,
+		),
+		'output' => array(
+											array(
+													'element'     => '.site-title',
+													'property'    => 'font-size',
+													'units'       => 'px',
+													'media_query' => '@media screen and (min-width: 35.5em)',
+											),
+									),
+	);
+
+	  $fields[] = array(
+		'type'        => 'typography',
+		'settings'    => 'site_title_typography_large',
+		'label'       => __( 'Site Title Large Screens', 'pure-demo' ),
+		'description' => __( 'Select type face for Site Title', 'pure-demo' ),
+		'help'        => __( 'This is the BIG MAIN title of the website. If you want to upload a custom font, not included in the list below, try the Use Any Font plugin: https://wordpress.org/plugins/use-any-font', 'pure-demo' ),
+		'section'     => 'site_typography',
+		'default'     => array(
+			'font-style'     => array( 'bold', 'italic' ),
+			'font-family'    => 'Roboto',
+			'font-size'      => '148',
+			'font-weight'    => '400',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
+		),
+		'priority'    => 0,
+		'choices'     => array(
+			'font-style'     => false,
+			'font-family'    => false,
+			'font-size'      => true,
+			'font-weight'    => false,
+			'line-height'    => false,
+			'letter-spacing' => false,
+		),
+		'output' => array(
+											array(
+													'element'     => '.site-title',
+													'property'    => 'font-size',
+													'units'       => 'px',
+													'media_query' => '@media screen and (min-width: 60em)',
+											),
+									),
 	);
 
 
