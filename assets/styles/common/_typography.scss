@@ -1,0 +1,229 @@
+/* Type
+*/
+
+@font-face {
+	font-family: 'TypewriterLite';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/AmericanTypewriter-Light.ttf');
+}
+
+@font-face {
+	font-family: 'IntroHead';
+	font-style: bold;
+	font-weight: 700;
+	src: url('../fonts/introheadb-h2base-webfont.ttf');
+}
+
+.main {
+        padding: 1rem;
+      }
+      .sidebar {
+        padding: 1rem;
+      }
+/*
+      .site-title a {
+        margin-top: 1.4rem;
+        font-family: 'IntroHead', monotype;
+        font-size: 4rem;
+        <?php if ( preg_match('/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/', $theme_settings['primary_text_color'])): ?>
+          color: <?= $theme_settings['primary_text_color']; ?>;
+        <?php endif; ?>;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: 'IntroHead', monotype;
+      }
+      .site-description {
+        font-family: 'TypewriterLite', monotype;
+        <?php if ( preg_match('/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/', $theme_settings['primary_text_color'])): ?>
+          color: <?= $theme_settings['primary_text_color']; ?>;
+        <?php endif; ?>;
+      }
+
+      .header {
+        <?php if ( preg_match('/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/', $theme_settings['primary_background_color'])): ?>
+          background-color: <?= $theme_settings['primary_background_color']; ?>;
+        <?php endif; ?>;
+        <?php if ( preg_match('/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/', $theme_settings['primary_text_color'])): ?>
+          color: <?= $theme_settings['primary_text_color']; ?>;
+        <?php endif; ?>;
+      }
+
+      p, span {
+        font-family: Helvetica, Verdana, sans-serif;
+      }
+
+        body {
+    font-family: Georgia;
+    }
+    */
+
+
+/* Globals */
+
+a {
+	text-decoration: none;
+	color: rgba(125, 149, 155, 1);
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+h3 {
+	font-weight: 100;
+}
+
+img, .wp-caption {
+	height: auto;
+	max-width: 100%;
+}
+
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+pre,
+code {
+	background-color: #eee;
+}
+pre {
+	padding: 1em;
+}
+code {
+	padding: 0 0.2em;
+}
+
+
+/**
+ * Posts
+ */
+.post {
+	padding-bottom: 2em;
+}
+.entry-title {
+	font-size: 3em;
+	margin-top: 0.3em;
+	margin-bottom: 0.2em;
+}
+.entry-title a {
+	/* font-size: 2em; */
+	color: #222;
+}
+.entry-title a:hover,
+.entry-title a:focus {
+	color: rgb(61, 146, 201);
+	text-decoration: none;
+}
+.entry-meta {
+	color: #999;
+	font-size: 90%;
+	margin: 0;
+}
+.entry-summary,
+.entry-content {
+	font-family: Georgia, "Cambria", serif;
+	color: #444;
+	line-height: 1.8em;
+}
+
+ul.post-categories {
+	padding-left: 0;
+	list-style-type: none;
+	display: inline;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+ul.post-categories li {
+	display: inline;
+}
+
+/**
+ * Page/Post Nav
+ */
+.page-nav,
+.post-nav {
+	display: block;
+	padding: 1em 0;
+	margin-bottom: 2em;
+}
+.page-nav a,
+.post-nav a {
+	text-decoration: none;
+}
+.page-nav .nav-previous,
+.post-nav .nav-previous {
+	float: left;
+}
+.page-nav .nav-next,
+.post-nav .nav-next {
+	float: right;
+}
+
+/**
+ * Footer
+ */
+.site-footer {
+	text-align: center;
+	padding: 1em 0;
+	font-size: 80%;
+	color: #666;
+}
+.site-footer a {
+	color: #999;
+}
+.site-footer .pure-menu-list li {
+	display: inline-block;
+	padding:.5em 1em;
+}
+.site-footer .pure-menu a:hover,
+.site-footer .pure-menu a:focus {
+	background: none;
+}
+.site-info {
+	padding: 1em;
+}
+
+/**
+ * Comments
+ * Comment styling is intentionally minimal.
+ * I recommend using Disqus, LiveFyre, Intense Debate or another third party comment solution.
+ */
+.comments-area {
+	margin-top: 3em;
+	border-top: 1px solid #eee;
+}
+.comments-area .comments-title {
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+ol.comment-list,
+li.comment > ol.children {
+	list-style-type: none;
+}
+li.comment {
+	display: block;
+}
+.comment-body {
+	margin-bottom: 30px;
+}
+.comment-meta {
+	font-size: 0.8em;
+}
+.comment-meta a {
+	color: #999;
+}
+.comment-reply-title {
+	font-size: 1.25em;
+	margin-bottom: 0.5em;
+}
+.comment-respond {
+	margin-top: 40px;
+}
+.comment-form-comment label {
+	display: block;
+}
+

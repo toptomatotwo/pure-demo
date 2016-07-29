@@ -27,40 +27,7 @@ body {
   margin: 0;
 }
 
-a {
-	text-decoration: none;
-	color: rgba(125, 149, 155, 1);
-}
-a:hover,
-a:focus {
-	text-decoration: underline;
-}
 
-h3 {
-	font-weight: 100;
-}
-
-img, .wp-caption {
-	height: auto;
-	max-width: 100%;
-}
-
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-pre,
-code {
-	background-color: #eee;
-}
-pre {
-	padding: 1em;
-}
-code {
-	padding: 0 0.2em;
-}
 
 .screen-reader-text {
 	position: absolute;
@@ -79,45 +46,7 @@ code {
     padding: 0;
 }
 
-/**
- * Header
- */
-.site-header {
-	text-align: center;
-	top: auto;
-	margin: 0 auto;
-}
 
-/**
- * Sidebar
- * TODO: Rename this to avoid conflicts with WordPress generated sidebar classes
- */
-
-.header {
-	background: rgb(61, 79, 93);
-	color: #fff;
-}
-
-/* These are ".brand-title" and ".brand-tagline" in the Pure CSS example. */
-.site-title,
-.site-description {
-	margin: 0;
-}
-
-.site-title {
-	text-transform: uppercase;
-	color: #fff;
-}
-
-.site-title a:hover,
-.site-title a:focus {
-	color: rgba(125, 149, 155, 1);
-	text-decoration: none;
-}
-.site-description {
-	font-weight: 300;
-	color: rgb(176,202,219);
-}
 
 /**
  *  Nav
@@ -196,134 +125,6 @@ code {
 	padding: 2em 1em 0;
 }
 
-/**
- * Posts
- */
-.post {
-	padding-bottom: 2em;
-}
-.entry-title {
-	font-size: 3em;
-	margin-top: 0.3em;
-	margin-bottom: 0.2em;
-}
-.entry-title a {
-	/* font-size: 2em; */
-	color: #222;
-}
-.entry-title a:hover,
-.entry-title a:focus {
-	color: rgb(61, 146, 201);
-	text-decoration: none;
-}
-.entry-meta {
-	color: #999;
-	font-size: 90%;
-	margin: 0;
-}
-.entry-summary,
-.entry-content {
-	font-family: Georgia, "Cambria", serif;
-	color: #444;
-	line-height: 1.8em;
-}
-
-ul.post-categories {
-	padding-left: 0;
-	list-style-type: none;
-	display: inline;
-	margin-bottom: 10px;
-	font-size: 12px;
-}
-ul.post-categories li {
-	display: inline;
-}
-
-/**
- * Page/Post Nav
- */
-.page-nav,
-.post-nav {
-	display: block;
-	padding: 1em 0;
-	margin-bottom: 2em;
-}
-.page-nav a,
-.post-nav a {
-	text-decoration: none;
-}
-.page-nav .nav-previous,
-.post-nav .nav-previous {
-	float: left;
-}
-.page-nav .nav-next,
-.post-nav .nav-next {
-	float: right;
-}
-
-/**
- * Footer
- */
-.site-footer {
-	text-align: center;
-	padding: 1em 0;
-	font-size: 80%;
-	color: #666;
-}
-.site-footer a {
-	color: #999;
-}
-.site-footer .pure-menu-list li {
-	display: inline-block;
-	padding:.5em 1em;
-}
-.site-footer .pure-menu a:hover,
-.site-footer .pure-menu a:focus {
-	background: none;
-}
-.site-info {
-	padding: 1em;
-}
-
-/**
- * Comments
- * Comment styling is intentionally minimal.
- * I recommend using Disqus, LiveFyre, Intense Debate or another third party comment solution.
- */
-.comments-area {
-	margin-top: 3em;
-	border-top: 1px solid #eee;
-}
-.comments-area .comments-title {
-	font-size: 1.5em;
-	margin-top: 1em;
-}
-ol.comment-list,
-li.comment > ol.children {
-	list-style-type: none;
-}
-li.comment {
-	display: block;
-}
-.comment-body {
-	margin-bottom: 30px;
-}
-.comment-meta {
-	font-size: 0.8em;
-}
-.comment-meta a {
-	color: #999;
-}
-.comment-reply-title {
-	font-size: 1.25em;
-	margin-bottom: 0.5em;
-}
-.comment-respond {
-	margin-top: 40px;
-}
-.comment-form-comment label {
-	display: block;
-}
 
 /**
  * Alignment
@@ -483,7 +284,69 @@ nav ul ul ul li {
 li > a:after { content:  ' +'; }
 li > a:only-child:after { content: ''; }
 
+/**
+ * Tables
+*/
 
+  table {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin:0;
+    padding:0;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+  }
+
+  table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    table {
+      border: 0;
+    }
+
+    table thead {
+      display: none;
+    }
+
+    table tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    table td:before {
+      content: attr(data-label);
+      float: left;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
 
 /**
  * Media Queries
@@ -511,20 +374,5 @@ li > a:only-child:after { content: ''; }
 
 }
 
-/* Type
-*/
 
-@font-face {
-	font-family: 'TypewriterLite';
-	font-style: normal;
-	font-weight: 400;
-	src: url('../fonts/AmericanTypewriter-Light.ttf');
-}
-
-@font-face {
-	font-family: 'IntroHead';
-	font-style: bold;
-	font-weight: 700;
-	src: url('../fonts/introheadb-h2base-webfont.ttf');
-}
 

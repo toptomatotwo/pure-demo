@@ -1,0 +1,39 @@
+/**
+ * Header
+ */
+.site-header {
+	text-align: center;
+	top: auto;
+	margin: 0 auto;
+}
+
+/**
+ * Sidebar
+ * TODO: Rename this to avoid conflicts with WordPress generated sidebar classes
+ */
+
+.header {
+	background: rgb(61, 79, 93);
+	color: #fff;
+}
+
+/* These are ".brand-title" and ".brand-tagline" in the Pure CSS example. */
+.site-title,
+.site-description {
+	margin: 0;
+}
+
+.site-title {
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.site-title a:hover,
+.site-title a:focus {
+	color: rgba(125, 149, 155, 1);
+	text-decoration: none;
+}
+.site-description {
+	font-weight: 300;
+	color: rgb(176,202,219);
+}
