@@ -373,8 +373,8 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 			'units'    => ' !important',
 		),
 		array(
-			'element'  => '#content',
-			'property' => 'border-color',
+			'element'  => '#header',
+			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
@@ -385,7 +385,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 			'property' => 'color',
 		),
 		array(
-			'element'  => '#content',
+			'element'  => '#header',
 			'function' => 'css',
 			'property' => 'background-color',
 		),
