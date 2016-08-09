@@ -87,6 +87,12 @@ endif;
 		'description' => __( 'This is the section description', 'pure-demo' ),
 	) );
 
+		$wp_customize->add_section( 'header_logo', array(
+		'title'       => __( 'Header Logo', 'pure-demo' ),
+		'priority'    => 0,
+		'description' => __( 'This is the section description', 'pure-demo' ),
+	) );
+
 }
 add_action( 'customize_register', 'kirki_demo_sections' );
 
@@ -98,6 +104,7 @@ Puredemo_Kirki::add_section( 'boolean_controls', array(
 	'title'       => __( 'Boolean Controls', 'pure-demo' ),
 	'description' => __( 'This panel contains controls that return true/false Controls', 'pure-demo' ),
 ) );
+
 
 /**
  * Add file controls
@@ -358,10 +365,10 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
  * Create Color fields using the Kirki API static functions
  */
 Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'color',
-	'settings'    => 'color_demo',
-	'label'       => __( 'Color Control', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
+	'type'        => 'color-alpha',
+	'settings'    => 'header_bg_color',
+	'label'       => __( 'Header Background', 'pure-demo' ),
+	'description' => __( 'This is the color of the main space across the top of the site.', 'pure-demo' ),
 	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
 	'section'     => 'color_section',
 	'default'     => '#0088cc',
@@ -379,11 +386,6 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
-		array(
-			'element'  => 'a, a:visited',
-			'function' => 'css',
-			'property' => 'color',
-		),
 		array(
 			'element'  => '#header',
 			'function' => 'css',
@@ -394,33 +396,74 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 
 Puredemo_Kirki::add_field( 'pure-demo', array(
 	'type'        => 'color-alpha',
-	'settings'    => 'color_alpha_demo',
-	'label'       => __( 'Color-Alpha Control', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
+	'settings'    => 'content_color',
+	'label'       => __( 'Main Content Background', 'pure-demo' ),
+	'description' => __( 'Set color of main site content background here.', 'pure-demo' ),
+	'help'        => __( 'Remember this will be on all pages.', 'pure-demo' ),
 	'section'     => 'color_section',
 	'default'     => '#0088cc',
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => 'a, a:visited',
-			'property' => 'color',
-			'units'    => ' !important',
+			'element'  => '.content',
+			'property' => 'background-color',
 		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+
 		array(
-			'element'  => '#content',
-			'property' => 'border-color',
+			'element'  => '.content',
+			'function' => 'css',
+			'property' => 'background-color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'menu_color',
+	'label'       => __( 'Menu Background', 'pure-demo' ),
+	'description' => __( 'Background for main nav menu in header.', 'pure-demo' ),
+	'help'        => __( 'Set second bar at bottom for clear.', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '.menu-item',
+			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
 		array(
-			'element'  => 'a, a:visited',
+			'element'  => '.menu-item',
 			'function' => 'css',
-			'property' => 'color',
+			'property' => 'background-color',
 		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'sub_menu_color',
+	'label'       => __( 'Sub-Menu Background', 'pure-demo' ),
+	'description' => __( 'Background for sub-nav menu items that drop down.', 'pure-demo' ),
+	'help'        => __( 'Set second bar at bottom for clear.', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
 		array(
-			'element'  => '#content',
+			'element'  => '.sub-menu .menu-item',
+			'property' => 'background-color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '.sub-menu .menu-item',
 			'function' => 'css',
 			'property' => 'background-color',
 		),
@@ -690,6 +733,121 @@ function kirki_site_typography_fields( $fields ) {
 		),
 		'output'  => '.site-description'
 	);
+
+	Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'site_title_color',
+	'label'       => __( 'Site Title Color', 'pure-demo' ),
+	'description' => __( 'Color of main title.', 'pure-demo' ),
+	'help'        => __( '', 'pure-demo' ),
+	'section'     => 'site_typography',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '.site-title a',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '.site-title a',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+	Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'site_description_color',
+	'label'       => __( 'Site Description Color', 'pure-demo' ),
+	'description' => __( 'Color of "tag line".', 'pure-demo' ),
+	'help'        => __( '', 'pure-demo' ),
+	'section'     => 'site_typography',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '.site-description',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '.site-description',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+$fields[] = array(
+    'type'        => 'select',
+    'setting'     => 'font_family',
+    'label'       => __( 'Global Font-Family', 'kirki' ),
+    'description' => __( 'Please choose a font for your site. This font-family will be applied to all elements on your page, including headers and body.', 'kirki' ),
+    'section'     => 'site_typography',
+    'default'     => 'Roboto',
+    'priority'    => 10,
+    'choices'     => Kirki_Fonts::get_font_choices(),
+    'output'      => array(
+        array(
+            'element'  => 'body, body p, h1, h2, h3, h4, h5, h6',
+            'property' => 'font-family',
+        ),
+    ),
+    'transport'   => 'postMessage',
+    'js_vars'     => array(
+        array(
+            'element'  => 'body, body p, h1, h2, h3, h4, h5, h6',
+            'function' => 'css',
+            'property' => 'font-family',
+        ),
+    ),
+);
+
+    $fields[] = array(
+        'type'        => 'slider',
+        'setting'     => 'font_size',
+        'label'       => __( 'Font-Size', 'kirki' ),
+        'description' => __( 'Please choose a font-size for your body.', 'kirki' ),
+        'section'     => 'site_typography',
+        'default'     => 1,
+        'priority'    => 20,
+        'choices'     => array(
+            'min'  => .7,
+            'max'  => 2,
+            'step' => .01
+        ),
+        output        => array(
+            array(
+                'element'  => 'body, body p',
+                'property' => 'font-size',
+                'units'    => 'em',
+            ),
+        ),
+        'transport'   => 'postMessage',
+        'js_vars'     => array(
+            array(
+                'element'  => 'body, body p',
+                'function' => 'css',
+                'property' => 'font-size',
+            ),
+        ),
+    );
+
+/* adding header_logo_setting field */
+Puredemo_Kirki::add_field( 'mk', array(
+    'settings' => 'header_logo_setting',
+    'label'    => __( 'Setting for the logo', 'theme_slug' ),
+    'section'  => 'header_logo',
+    'type'     => 'image',
+    'priority' => 10,
+    'default'  => '',
+) );
 
 	return $fields;
 
