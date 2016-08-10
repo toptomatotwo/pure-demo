@@ -747,6 +747,7 @@ function kirki_site_typography_fields( $fields ) {
 		array(
 			'element'  => '.site-title a',
 			'property' => 'color',
+			'units'    => ' !important',
 		),
 	),
 	'transport'   => 'postMessage',
@@ -755,6 +756,7 @@ function kirki_site_typography_fields( $fields ) {
 			'element'  => '.site-title a',
 			'function' => 'css',
 			'property' => 'color',
+			'units'    => ' !important',
 		),
 	)
 ) );
@@ -840,7 +842,7 @@ $fields[] = array(
     );
 
 /* adding header_logo_setting field */
-Puredemo_Kirki::add_field( 'mk', array(
+Puredemo_Kirki::add_field( 'pure-demo', array(
     'settings' => 'header_logo_setting',
     'label'    => __( 'Setting for the logo', 'theme_slug' ),
     'section'  => 'header_logo',

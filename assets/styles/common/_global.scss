@@ -27,7 +27,10 @@ body {
   margin: 0;
 }
 
-
+//Override transparent color on hover with kirki customizer.
+.accordion-section-title:hover {
+  color: red !important;
+}
 
 .screen-reader-text {
 	position: absolute;
