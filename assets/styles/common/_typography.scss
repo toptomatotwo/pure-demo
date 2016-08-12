@@ -225,7 +225,7 @@ li.comment {
 	display: block;
 }
 
-.entry-content p {
+.entry-content p, .entry-summary p {
   font-size: .8rem;
 }
 
@@ -238,13 +238,13 @@ li.comment {
 	  font-size: 3em;
 	}
 
-	.entry-content p, entry-summary p {
+	.entry-content p, .entry-summary p {
     font-size: 1rem;
   }
 }
 
 @media (min-width: 60em) {
-	.entry-content p, entry-summary p {
+	.entry-content p, .entry-summary p {
     font-size: 1.2rem;
   }
 }
