@@ -51,42 +51,6 @@ endif;
 		'description' => __( 'This is the section description', 'pure-demo' ),
 	) );
 
-	$wp_customize->add_section( 'file_controls_section', array(
-		'title'       => __( 'File & Image Controls', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
-	$wp_customize->add_section( 'text_section', array(
-		'title'       => __( 'Text Control', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
-	$wp_customize->add_section( 'background_section', array(
-		'title'       => __( 'Background Control', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
-	$wp_customize->add_section( 'numeric', array(
-		'title'       => __( 'Numeric Controls', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
-	$wp_customize->add_section( 'custom_section', array(
-		'title'       => __( 'Custom Control', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
-	$wp_customize->add_section( 'repeater_section', array(
-		'title'       => __( 'Repeater Control', 'pure-demo' ),
-		'priority'    => 10,
-		'description' => __( 'This is the section description', 'pure-demo' ),
-	) );
-
 		$wp_customize->add_section( 'header_logo', array(
 		'title'       => __( 'Header Logo', 'pure-demo' ),
 		'priority'    => 0,
@@ -420,22 +384,72 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'settings'    => 'menu_color',
 	'label'       => __( 'Menu Background', 'pure-demo' ),
 	'description' => __( 'Background for main nav menu in header.', 'pure-demo' ),
-	'help'        => __( 'Set second bar at bottom for clear.', 'pure-demo' ),
+	'help'        => __( 'Set right bar to bottom for transparent.', 'pure-demo' ),
 	'section'     => 'color_section',
 	'default'     => '#0088cc',
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => '.menu-item',
+			'element'  => '#header .menu-item',
 			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
 		array(
-			'element'  => '.menu-item',
+			'element'  => '#header .menu-item',
 			'function' => 'css',
 			'property' => 'background-color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'menu_hover_color',
+	'label'       => __( 'Menu Background on Hover', 'pure-demo' ),
+	'description' => __( 'Background for main nav menu in header - on hover.', 'pure-demo' ),
+	'help'        => __( 'Set right bar to bottom for transparent.', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#000000',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '#header .menu-item:hover',
+			'property' => 'background-color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '#header .menu-item:hover',
+			'function' => 'css',
+			'property' => 'background-color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'menu_text_color',
+	'label'       => __( 'Menu Text Color', 'pure-demo' ),
+	'description' => __( 'Static Color of Menu Text.', 'pure-demo' ),
+	'help'        => __( 'Menu Text Color does not change.', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#ffffff',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '#header .menu-item a',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '#header .menu-item a',
+			'function' => 'css',
+			'property' => 'color',
 		),
 	)
 ) );
@@ -451,14 +465,14 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => '.sub-menu .menu-item',
+			'element'  => '#header .sub-menu .menu-item',
 			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
 		array(
-			'element'  => '.sub-menu .menu-item',
+			'element'  => '#header .sub-menu .menu-item',
 			'function' => 'css',
 			'property' => 'background-color',
 		),
@@ -591,95 +605,6 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 		),
 	)
 ) );
-
-/**
- * Create Boolean fields using the Kirki API static functions
- */
-// Checkbox
-Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'checkbox',
-	'settings'    => 'checkbox_demo_0',
-	'label'       => __( 'This is the label', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
-	'section'     => 'boolean_controls',
-	'default'     => 1,
-	'priority'    => 10,
-) );
-
-// Switch
-Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'switch',
-	'settings'    => 'switch_demo_0',
-	'label'       => __( 'This is the label', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
-	'section'     => 'boolean_controls',
-	'default'     => '1',
-	'priority'    => 10,
-) );
-Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'switch',
-	'settings'    => 'switch_demo_1',
-	'label'       => __( 'This is the label', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
-	'section'     => 'boolean_controls',
-	'default'     => '1',
-	'priority'    => 10,
-	'choices'     => array( 'round' => true ),
-) );
-
-// Toggle
-Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'toggle',
-	'settings'    => 'toggle_demo_1',
-	'label'       => __( 'This is the label', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
-	'section'     => 'boolean_controls',
-	'default'     => 1,
-	'priority'    => 10,
-) );
-
-/**
- * Add the background field
-
-Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'background',
-	'settings'    => 'background_demo',
-	'label'       => __( 'This is the label', 'pure-demo' ),
-	'description' => __( 'This is the control description', 'pure-demo' ),
-	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
-	'section'     => 'background_section',
-	'default'     => array(
-		'color'    => '#ffffff',
-		'image'    => '',
-		'repeat'   => 'no-repeat',
-		'size'     => 'cover',
-		'attach'   => 'fixed',
-		'position' => 'left-top',
-		'opacity'  => 90,
-	),
-	'priority'    => 10,
-	'output'      => '.hentry',
-) );
- */
-/**
- * Configuration sample for the Kirki Customizer.
- */
-function kirki_demo_configuration_sample() {
-
-	$args = array(
-		// 'logo_image'   => KIRKI_URL . 'assets/images/kirki-toolkit.png',
-		// 'color_accent' => '#00bcd4',
-		'color_back'   => '#f7f7f7',
-		// 'width'        => '350px'
-	);
-
-	return $args;
-}
-add_filter( 'kirki/config', 'kirki_demo_configuration_sample' );
 
 /**
  * Add controls using the 'kirki/fields' filter.
