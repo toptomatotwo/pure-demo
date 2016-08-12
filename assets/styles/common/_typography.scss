@@ -15,16 +15,14 @@
 	src: url('../fonts/introheadb-h2base-webfont.ttf');
 }
 
-.main {
-    padding: 1rem;
-}
-
-.sidebar {
-  padding: 1rem;
-}
-
 .site-title {
   font-size: 2em;
+}
+
+.entry-content {
+  max-width: 30em;
+  /* Anywhere between 22.5em to 37.5em. Use your discretion */
+  //margin-right: 1em;
 }
 /*
       .site-title a {
@@ -109,11 +107,6 @@ code {
 .post {
 	padding-bottom: 2em;
 }
-.entry-title {
-	font-size: 3em;
-	margin-top: 0.3em;
-	margin-bottom: 0.2em;
-}
 .entry-title a {
 	/* font-size: 2em; */
 	color: #222;
@@ -128,12 +121,12 @@ code {
 	font-size: 90%;
 	margin: 0;
 }
-.entry-summary,
+/*.entry-summary,
 .entry-content {
 	font-family: Georgia, "Cambria", serif;
 	color: #444;
 	line-height: 1.8em;
-}
+}*/
 
 ul.post-categories {
 	padding-left: 0;
@@ -232,6 +225,9 @@ li.comment {
 	display: block;
 }
 
+.entry-content p {
+  font-size: .8rem;
+}
 
 @media (min-width: 35.5em) {
 	nav ul li {
@@ -241,4 +237,14 @@ li.comment {
 	.site-title {
 	  font-size: 3em;
 	}
+
+	.entry-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 60em) {
+	.entry-content p {
+    font-size: 1.2rem;
+  }
 }

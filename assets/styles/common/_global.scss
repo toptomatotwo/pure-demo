@@ -27,9 +27,23 @@ body {
   margin: 0;
 }
 
+
+.content {
+  margin: 0 .4em;
+}
+
+textarea {
+  max-width: 100%;
+}
+
 //Override transparent color on hover with kirki customizer.
-.accordion-section-title:hover {
-  color: red !important;
+//TODO solve this problem.
+#customize-controls .control-section .accordion-section-title:focus, #customize-controls .control-section .accordion-section-title:hover, #customize-controls .control-section.open .accordion-section-title, #customize-controls .control-section:hover > .accordion-section-title {
+    color: #999 !important;
+}
+
+#branding {
+  font-size: 1em;
 }
 
 .screen-reader-text {
@@ -359,6 +373,12 @@ li > a:only-child:after { content: ''; }
 	nav ul li {
 		min-width: 1rem;
 	}
+	#branding {
+    font-size: 2em;
+  }
+  .content {
+    margin: 0 1em;
+  }
 }
 
 @media (min-width: 60em) {
@@ -371,10 +391,18 @@ li > a:only-child:after { content: ''; }
 	.admin-bar #page {
 		padding-top: 32px;
 	}
+	#branding {
+    font-size: 2.5em;
+  }
+  .main, .sidebar {
+      padding: 1rem;
+  }
 }
 
 @media (min-width: 100em) {
-
+	#branding {
+    font-size: 3em;
+  }
 }
 
 

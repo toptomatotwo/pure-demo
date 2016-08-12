@@ -375,11 +375,6 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => 'a, a:visited',
-			'property' => 'color',
-			'units'    => ' !important',
-		),
-		array(
 			'element'  => '#header',
 			'property' => 'background-color',
 		),
@@ -396,8 +391,8 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 
 Puredemo_Kirki::add_field( 'pure-demo', array(
 	'type'        => 'color-alpha',
-	'settings'    => 'content_color',
-	'label'       => __( 'Main Content Background', 'pure-demo' ),
+	'settings'    => 'body_bg__color',
+	'label'       => __( 'Main Body Background', 'pure-demo' ),
 	'description' => __( 'Set color of main site content background here.', 'pure-demo' ),
 	'help'        => __( 'Remember this will be on all pages.', 'pure-demo' ),
 	'section'     => 'color_section',
@@ -405,7 +400,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => '.content',
+			'element'  => 'body',
 			'property' => 'background-color',
 		),
 	),
@@ -413,7 +408,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'js_vars'     => array(
 
 		array(
-			'element'  => '.content',
+			'element'  => 'body',
 			'function' => 'css',
 			'property' => 'background-color',
 		),
@@ -470,6 +465,133 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	)
 ) );
 
+	Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'site_title_color',
+	'label'       => __( 'Site Title Color', 'pure-demo' ),
+	'description' => __( 'Color of main title.', 'pure-demo' ),
+	'help'        => __( '', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '.site-title a',
+			'property' => 'color',
+			'units'    => ' !important',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '.site-title a',
+			'function' => 'css',
+			'property' => 'color',
+			'units'    => ' !important',
+		),
+	)
+) );
+
+	Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'site_description_color',
+	'label'       => __( 'Site Description Color', 'pure-demo' ),
+	'description' => __( 'Color of "tag line".', 'pure-demo' ),
+	'help'        => __( '', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#0088cc',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => '.site-description',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => '.site-description',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'body_text_color',
+	'label'       => __( 'Body Text Color', 'pure-demo' ),
+	'description' => __( 'Main body content color', 'pure-demo' ),
+	'help'        => __( 'Nothing here yet', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#333333',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => 'body, body p',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => 'body, body p',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'global_link_color',
+	'label'       => __( 'Link Color', 'pure-demo' ),
+	'description' => __( 'Color of links', 'pure-demo' ),
+	'help'        => __( 'Nothing here yet', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#09f',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => 'a, a:visited',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => 'a, a:visited',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'global_link_hover_color',
+	'label'       => __( 'Link Hover Color', 'pure-demo' ),
+	'description' => __( 'Color of links when hovered over', 'pure-demo' ),
+	'help'        => __( 'Nothing here yet', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#00ddff',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => 'a:hover',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => 'a:hover',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
 /**
  * Create Boolean fields using the Kirki API static functions
  */
@@ -522,7 +644,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 
 /**
  * Add the background field
- */
+
 Puredemo_Kirki::add_field( 'pure-demo', array(
 	'type'        => 'background',
 	'settings'    => 'background_demo',
@@ -542,7 +664,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'priority'    => 10,
 	'output'      => '.hentry',
 ) );
-
+ */
 /**
  * Configuration sample for the Kirki Customizer.
  */
@@ -604,7 +726,7 @@ function kirki_twentytwelve_alter_color( $color ) {
 function kirki_site_typography_fields( $fields ) {
 
 	// See this post for details on output as array: https://github.com/aristath/kirki/issues/585
-  $fields[] = array(
+/*  $fields[] = array(
 		'type'        => 'typography',
 		'settings'    => 'site_title_typography_small',
 		'label'       => __( 'Site Title Small Screens', 'pure-demo' ),
@@ -671,18 +793,18 @@ function kirki_site_typography_fields( $fields ) {
 											),
 									),
 	);
-
+*/
 	  $fields[] = array(
 		'type'        => 'typography',
-		'settings'    => 'site_title_typography_large',
-		'label'       => __( 'Site Title Large Screens', 'pure-demo' ),
-		'description' => __( 'Select type face for Site Title', 'pure-demo' ),
+		'settings'    => 'site_title_size',
+		'label'       => __( 'Site Title', 'pure-demo' ),
+		'description' => __( 'Set to size in MOBILE view - will expand', 'pure-demo' ),
 		'help'        => __( 'This is the BIG MAIN title of the website. If you want to upload a custom font, not included in the list below, try the Use Any Font plugin: https://wordpress.org/plugins/use-any-font', 'pure-demo' ),
 		'section'     => 'site_typography',
 		'default'     => array(
 			'font-style'     => array( 'bold', 'italic' ),
 			'font-family'    => 'Roboto',
-			'font-size'      => '148',
+			'font-size'      => '1em',
 			'font-weight'    => '400',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0',
@@ -700,8 +822,8 @@ function kirki_site_typography_fields( $fields ) {
 											array(
 													'element'     => '.site-title',
 													'property'    => 'font-size',
-													'units'       => 'px',
-													'media_query' => '@media screen and (min-width: 60em)',
+													'units'       => 'em',
+													//'media_query' => '@media screen and (min-width: 60em)',
 											),
 									),
 	);
@@ -709,7 +831,7 @@ function kirki_site_typography_fields( $fields ) {
 
 	$fields[] = array(
 		'type'        => 'typography',
-		'settings'    => 'site_description_typography',
+		'settings'    => 'site_description_size',
 		'label'       => __( 'Site Description Typography', 'pure-demo' ),
 		'description' => __( 'Select type face for Site Description', 'pure-demo' ),
 		'help'        => __( 'This is the "tag line" located below the Site Title.', 'pure-demo' ),
@@ -717,7 +839,7 @@ function kirki_site_typography_fields( $fields ) {
 		'default'     => array(
 			'font-style'     => array( 'bold', 'italic' ),
 			'font-family'    => 'Roboto',
-			'font-size'      => '24',
+			'font-size'      => '0.6em',
 			'font-weight'    => '400',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0',
@@ -731,115 +853,100 @@ function kirki_site_typography_fields( $fields ) {
 			'line-height'    => true,
 			'letter-spacing' => true,
 		),
-		'output'  => '.site-description'
+		'output' => array(
+											array(
+													'element'     => '.site-description',
+													'property'    => 'font-size',
+													'units'       => 'em',
+													//'media_query' => '@media screen and (min-width: 60em)',
+											),
+									),
 	);
 
-	Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'color-alpha',
-	'settings'    => 'site_title_color',
-	'label'       => __( 'Site Title Color', 'pure-demo' ),
-	'description' => __( 'Color of main title.', 'pure-demo' ),
-	'help'        => __( '', 'pure-demo' ),
-	'section'     => 'site_typography',
-	'default'     => '#0088cc',
-	'priority'    => 10,
-	'output'      => array(
-		array(
-			'element'  => '.site-title a',
-			'property' => 'color',
-			'units'    => ' !important',
+	$fields[] = array(
+		'type'        => 'typography',
+		'settings'    => 'top_nav_typo',
+		'label'       => __( 'Top Nav Typography', 'pure-demo' ),
+		'description' => __( 'Select type face for Top Nav', 'pure-demo' ),
+		'help'        => __( '', 'pure-demo' ),
+		'section'     => 'site_typography',
+		'default'     => array(
+			'font-style'     => array( 'bold', 'italic' ),
+			'font-family'    => 'Roboto',
+			'font-size'      => '0.6em',
+			'font-weight'    => '400',
+			'line-height'    => '1.5',
+			'letter-spacing' => '0',
 		),
-	),
-	'transport'   => 'postMessage',
-	'js_vars'     => array(
-		array(
-			'element'  => '.site-title a',
-			'function' => 'css',
-			'property' => 'color',
-			'units'    => ' !important',
+		'priority'    => 10,
+		'choices'     => array(
+			'font-style'     => true,
+			'font-family'    => true,
+			'font-size'      => true,
+			'font-weight'    => true,
+			'line-height'    => true,
+			'letter-spacing' => true,
 		),
-	)
-) );
-
-	Puredemo_Kirki::add_field( 'pure-demo', array(
-	'type'        => 'color-alpha',
-	'settings'    => 'site_description_color',
-	'label'       => __( 'Site Description Color', 'pure-demo' ),
-	'description' => __( 'Color of "tag line".', 'pure-demo' ),
-	'help'        => __( '', 'pure-demo' ),
-	'section'     => 'site_typography',
-	'default'     => '#0088cc',
-	'priority'    => 10,
-	'output'      => array(
-		array(
-			'element'  => '.site-description',
-			'property' => 'color',
-		),
-	),
-	'transport'   => 'postMessage',
-	'js_vars'     => array(
-		array(
-			'element'  => '.site-description',
-			'function' => 'css',
-			'property' => 'color',
-		),
-	)
-) );
+		'output' => array(
+											array(
+													'element'     => '.nav-list li a',
+													'property'    => 'font-size',
+													'units'       => 'em',
+													//'media_query' => '@media screen and (min-width: 60em)',
+											),
+									),
+	);
 
 $fields[] = array(
     'type'        => 'select',
-    'setting'     => 'font_family',
-    'label'       => __( 'Global Font-Family', 'kirki' ),
-    'description' => __( 'Please choose a font for your site. This font-family will be applied to all elements on your page, including headers and body.', 'kirki' ),
+    'setting'     => 'font_family_headers',
+    'label'       => __( 'Global Font-Family for Headers', 'kirki' ),
+    'description' => __( 'Please choose a font for your site. This font-family will be applied to all headers.', 'kirki' ),
     'section'     => 'site_typography',
     'default'     => 'Roboto',
     'priority'    => 10,
     'choices'     => Kirki_Fonts::get_font_choices(),
     'output'      => array(
         array(
-            'element'  => 'body, body p, h1, h2, h3, h4, h5, h6',
+            'element'  => 'h1, h2, h3, h4, h5, h6',
             'property' => 'font-family',
         ),
     ),
     'transport'   => 'postMessage',
     'js_vars'     => array(
         array(
-            'element'  => 'body, body p, h1, h2, h3, h4, h5, h6',
+            'element'  => 'h1, h2, h3, h4, h5, h6',
             'function' => 'css',
             'property' => 'font-family',
         ),
     ),
 );
 
-    $fields[] = array(
-        'type'        => 'slider',
-        'setting'     => 'font_size',
-        'label'       => __( 'Font-Size', 'kirki' ),
-        'description' => __( 'Please choose a font-size for your body.', 'kirki' ),
-        'section'     => 'site_typography',
-        'default'     => 1,
-        'priority'    => 20,
-        'choices'     => array(
-            'min'  => .7,
-            'max'  => 2,
-            'step' => .01
+$fields[] = array(
+    'type'        => 'select',
+    'setting'     => 'font_family_body',
+    'label'       => __( 'Global Font-Family for site text', 'kirki' ),
+    'description' => __( 'Please choose a font for your site\'s paragraphs in regular content', 'kirki' ),
+    'section'     => 'site_typography',
+    'default'     => 'Roboto',
+    'priority'    => 10,
+    'choices'     => Kirki_Fonts::get_font_choices(),
+    'output'      => array(
+        array(
+            'element'  => 'body, body p',
+            'property' => 'font-family',
         ),
-        output        => array(
-            array(
-                'element'  => 'body, body p',
-                'property' => 'font-size',
-                'units'    => 'em',
-            ),
+    ),
+    'transport'   => 'postMessage',
+    'js_vars'     => array(
+        array(
+            'element'  => 'body, body p',
+            'function' => 'css',
+            'property' => 'font-family',
         ),
-        'transport'   => 'postMessage',
-        'js_vars'     => array(
-            array(
-                'element'  => 'body, body p',
-                'function' => 'css',
-                'property' => 'font-size',
-            ),
-        ),
-    );
+    ),
+);
+
 
 /* adding header_logo_setting field */
 Puredemo_Kirki::add_field( 'pure-demo', array(
