@@ -4,6 +4,7 @@
 // bower:scss
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 @import "../../bower_components/sass-pura/assets/_pure.scss";
+@import "../../bower_components/vanilla-js-responsive-menu/scss/responsivemenu.scss";
 // endbower
 
 @import "common/global";
@@ -13,6 +14,8 @@
 @import "components/forms";
 @import "components/grid";
 @import "components/wp-classes";
+@import "components/responsivemenu";
+@import "components/navigation";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";

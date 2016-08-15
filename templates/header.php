@@ -11,14 +11,14 @@
     <?php endif; ?>
       <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
     </div>
-    <nav class="nav">
+    <nav class="navigation_container">
       <?php
       /**
        * Only get the Primary menu if it is set in the WordPress Admin.
        * The menu_class argument breaks if there is no menu activated in the WordPress Admin
        */
         if ( has_nav_menu( 'primary_navigation' ) ) :
-           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav-list']);
+           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'rm-closed']);
         endif;
       ?>
     </nav>

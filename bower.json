@@ -8,6 +8,8 @@
   "private": true,
   "dependencies": {
     "font-awesome": "^4.6.3",
-    "sass-pura": "*"
+    "sass-pura": "*",
+    "apollo.js": "^1.7.0",
+    "vanilla-js-responsive-menu": "^1.1.3"
   }
 }
