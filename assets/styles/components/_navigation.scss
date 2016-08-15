@@ -26,16 +26,18 @@
 
 .navigation_container {
   min-height: 40px;
+  display: inline-block;
+  margin: 0 auto;
 
   ul {
     width: 100%;
-    max-width: 960px;
+    //max-width: 960px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
 
     @media (min-width:600px) {
-      height: 40px;
+      //height: 40px;
     }
   }
 
@@ -69,7 +71,7 @@
     padding: 0;
 
     @media (min-width:600px) {
-      height: 40px;
+      //height: 40px;
       float: left;
     }
 
@@ -91,7 +93,7 @@
     padding: 8px 16px;
     line-height: 24px;
     text-decoration: none;
-    height: 40px;
+    //height: 40px;
 
     &:after {
       font-size: 12px;
