@@ -253,6 +253,15 @@ li.comment {
 
 
 .entry-content p, .entry-summary p {
-  @include font-size($p-font-sizes);
+  //@include font-size($p-font-sizes);
+  @include typi-base();
 }
+
+html {
+  @include typi-base();
+}
+
+h1 { @include typi($h1-map) }
+h2 { @include typi($h2-map) }
+h3 { @include typi($h3-map) }
 

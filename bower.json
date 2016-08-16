@@ -10,6 +10,7 @@
     "font-awesome": "^4.6.3",
     "sass-pura": "*",
     "apollo.js": "^1.7.0",
-    "vanilla-js-responsive-menu": "^1.1.3"
+    "vanilla-js-responsive-menu": "^1.1.3",
+    "typi": "^2.3.0"
   }
 }

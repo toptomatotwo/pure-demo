@@ -18,11 +18,29 @@ $breakpoints: (
   large : 100em
 );
 
-$p-font-sizes: (
-  null  : (.9rem, 1.3),
-  small : 1rem,
-  medium: (1.2rem, 1.4),
-  900px : 1.3rem,
-  large : (1.4rem, 1.45),
-  1840px: 20px,
+$h1-map: (
+  null: (1.129em, 1.2),
+  small: (1.4em, 1.2),
+  medium: (2.9em, 1.2),
+  large: (3.3353em, 1.3)
+  );
+
+$h2-map: (
+  null: 1.3353em,
+  medium: 1.5em,
+  large: 1.769em
+  );
+
+$h3-map: (
+  null: 1.769em,
+  large: 1.333em
+  );
+
+$typi: (
+  null  : (13.5px, 1.3),
+  small : 14px,
+  medium: (16px, 1.4),
+  //900px : 1.3rem,
+  large : (18px, 1.45),
+  //1840px: 20px,
 );
