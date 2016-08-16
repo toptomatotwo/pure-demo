@@ -237,10 +237,6 @@ li.comment {
 	display: block;
 }
 
-.entry-content p, .entry-summary p {
-  font-size: .8rem;
-}
-
 @media (min-width: 35.5em) {
 	nav ul li {
 		min-width: 1rem;
@@ -251,12 +247,12 @@ li.comment {
 	}
 
 	.entry-content p, .entry-summary p {
-    font-size: 1rem;
+    //font-size: 1rem;
   }
 }
 
-@media (min-width: 60em) {
-	.entry-content p, .entry-summary p {
-    font-size: 1.2rem;
-  }
+
+.entry-content p, .entry-summary p {
+  @include font-size($p-font-sizes);
 }
+
