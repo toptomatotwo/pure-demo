@@ -13,6 +13,8 @@
  *
  */
 
+// Code here will be linted with JSHint.
+/* jshint ignore:start */
 (function (root, factory) {
     if ( typeof define === 'function' && define.amd ) {
         define('responsivemenu', factory(root));
@@ -461,6 +463,8 @@
     return exports;
 
 });
+// Code here will be ignored by JSHint.
+/* jshint ignore:end */
 
 /* ========================================================================
  * DOM-based Routing

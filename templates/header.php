@@ -1,7 +1,7 @@
 <?php
 use  Roots\Sage\HeroRender;
 ?>
-<div id="header" class="header pure-u-1">
+<div id="header" class="header pure-u-1" >
   <header id="masthead" class="site-header" role="banner">
     <div id="branding" class="site-branding">
     <?php $logo_image = Puredemo_Kirki::get_option( 'pure-demo', 'header_logo_setting' );
@@ -26,8 +26,4 @@ use  Roots\Sage\HeroRender;
       ?>
     </nav>
   </header>
-</div>
-  <?php
-		// Get hero
-		HeroRender\puredemo_get_hero();
-	?>
+</div><?php HeroRender\puredemo_get_her(); ?>

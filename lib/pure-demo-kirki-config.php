@@ -120,22 +120,11 @@ add_filter( 'kirki/fields', 'kirki_file_controls_fields' );
 function kirki_text_controls_fields( $fields ) {
 
 	$fields[] = array(
-		'type'        => 'text',
-		'settings'    => 'text_demo',
-		'label'       => __( 'Text', 'pure-demo' ),
-		'description' => __( 'This is the control description', 'pure-demo' ),
-		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
-		'section'     => 'text_section',
-		'default'     => 'This is some default text',
-		'priority'    => 10,
-	);
-
-	$fields[] = array(
 		'type'        => 'code',
 		'settings'    => 'puredemo_custom_css',
 		'label'       => __( 'Code-HTML-Chrome', 'pure-demo' ),
-		'description' => __( 'This is the control description', 'pure-demo' ),
-		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
+		'description' => __( 'Add custom CSS styling for the site here.', 'pure-demo' ),
+		'help'        => __( 'Example of CSS styling would be: `.header {color: white;}`.', 'pure-demo' ),
 		'default'     => '',
 		'section'     => 'text_section',
 		'choices'     => array(

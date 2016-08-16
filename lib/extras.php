@@ -20,6 +20,8 @@ function body_class($classes) {
     $classes[] = 'sidebar-primary';
   }
 
+  $classes[] = 'no-js';
+
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
@@ -82,7 +84,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  */
 function aristath_add_custom_css_to_dynamic_css( $css ) {
     // Get the custom CSS
-    $custom_css = get_theme_mod( 'puredemo_custom_css', '.header {border: 3px solid lime;}' );
+    $custom_css = get_theme_mod( 'puredemo_custom_css', '' );
     // Append our custom CSS to the Kirki-generated custom-css
     // and return the result
 
