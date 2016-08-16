@@ -1,3 +1,6 @@
+<?php
+use  Roots\Sage\HeroRender;
+?>
 <div id="header" class="header pure-u-1">
   <header id="masthead" class="site-header" role="banner">
     <div id="branding" class="site-branding">
@@ -24,3 +27,7 @@
     </nav>
   </header>
 </div>
+  <?php
+		// Get hero
+		HeroRender\puredemo_get_hero();
+	?>

@@ -60,15 +60,15 @@ use Roots\Sage\Extras;
 						'textarea_rows' => 8,
 					)
 				); ?>
-				<label class="description" for="hero_content"><?php _e( 'Add text and calls to action.', 'keel' ); ?></label>
+				<label class="description" for="hero_content"><?php _e( 'Add text and calls to action.', 'puredemo' ); ?></label>
 			</fieldset>
 
 			<h3>Image or Video</h3>
 
 			<fieldset>
-				<label for="puredemo_page_hero_image_upload"><?php printf( __( '[Optional] Select an image or video using the Media Uploader. Alternatively, paste the URL for a video hosted on YouTube, Vimeo, Viddler, Instagram, TED, %sand more%s. Example: %s', 'keel' ), '<a target="_blank" href="http://www.oembed.com/#section7.1">', '</a>', '<code>http://youtube.com/watch/?v=12345abc</code>' ); ?></label>
+				<label for="puredemo_page_hero_image_upload"><?php printf( __( '[Optional] Select an image or video using the Media Uploader. Alternatively, paste the URL for a video hosted on YouTube, Vimeo, Viddler, Instagram, TED, %sand more%s. Example: %s', 'puredemo' ), '<a target="_blank" href="http://www.oembed.com/#section7.1">', '</a>', '<code>http://youtube.com/watch/?v=12345abc</code>' ); ?></label>
 				<input type="text" class="large-text" name="puredemo_page_hero_image" id="puredemo_page_hero_image" value="<?php echo stripslashes( $hero['image'] ); ?>"><br>
-				<button type="button" class="button" id="puredemo_page_hero_image_upload_btn" data-keel-page-hero="#puredemo_page_hero_image"><?php _e( 'Select an Image or Video', 'keel' )?></button>
+				<button type="button" class="button" id="puredemo_page_hero_image_upload_btn" data-puredemo-page-hero="#puredemo_page_hero_image"><?php _e( 'Select an Image or Video', 'puredemo' )?></button>
 			</fieldset>
 
 			<h3>Background Images</h3>
@@ -77,13 +77,13 @@ use Roots\Sage\Extras;
 
 			<fieldset>
 				<input type="checkbox" id="puredemo_page_hero_overlay" name="puredemo_page_hero_overlay" value="on" <?php checked( 'on',  $hero['overlay'] ); ?>>
-				<label for="puredemo_page_hero_overlay"><?php _e( 'Add a semi-transparent overlay to the background image to make the text easier to read', 'keel' ); ?></label>
+				<label for="puredemo_page_hero_overlay"><?php _e( 'Add a semi-transparent overlay to the background image to make the text easier to read', 'puredemo' ); ?></label>
 			</fieldset>
 
 			<h3>Minimum Height</h3>
 
 			<fieldset>
-				<label for="puredemo_page_hero_image_upload"><?php printf( __( '[Optional] Make sure the hero never gets too small by providing a minimum height. Example: %s', 'keel' ), '<code>300px</code>' ); ?></label>
+				<label for="puredemo_page_hero_image_upload"><?php printf( __( '[Optional] Make sure the hero never gets too small by providing a minimum height. Example: %s', 'puredemo' ), '<code>300px</code>' ); ?></label>
 				<input type="text" class="large-text" name="puredemo_page_hero_min_height" id="puredemo_page_hero_min_height" value="<?php echo stripslashes( $hero['min_height'] ); ?>">
 			</fieldset>
 
@@ -91,14 +91,14 @@ use Roots\Sage\Extras;
 			Find RGBA codes at: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool">RGB color picker</a>
 
 			<fieldset>
-				<label for="puredemo_page_hero_overlay_styling"><?php printf( __( '[Optional] Change overlay color and transparency from default. Example: %s', 'keel' ), '<code>rgba(0, 0, 0, 0.5)</code>' ); ?></label>
+				<label for="puredemo_page_hero_overlay_styling"><?php printf( __( '[Optional] Change overlay color and transparency from default. Example: %s', 'puredemo' ), '<code>rgba(0, 0, 0, 0.5)</code>' ); ?></label>
 				<input type="text" class="large-text" name="puredemo_page_hero_overlay_styling" id="puredemo_page_hero_overlay_styling" value="<?php echo stripslashes( $hero['overlay_styling'] ); ?>">
 			</fieldset>
 
 		<?php
 
 		// Security field
-		wp_nonce_field( 'keel-page-hero-nonce', 'keel-page-hero-process' );
+		wp_nonce_field( 'puredemo-page-hero-nonce', 'puredemo-page-hero-process' );
 
 	}
 
@@ -109,10 +109,10 @@ use Roots\Sage\Extras;
 	 * @param  number $post_id The post ID
 	 * @param  Array $post     The post data
 	 */
-	function keel_save_page_hero_textarea( $post_id, $post ) {
+	function puredemo_save_page_hero_textarea( $post_id, $post ) {
 
 		// Verify data came from edit screen
-		if ( !isset( $_POST['keel-page-hero-process'] ) || !wp_verify_nonce( $_POST['keel-page-hero-process'], 'keel-page-hero-nonce' ) ) {
+		if ( !isset( $_POST['puredemo-page-hero-process'] ) || !wp_verify_nonce( $_POST['puredemo-page-hero-process'], 'puredemo-page-hero-nonce' ) ) {
 			return $post->ID;
 		}
 
@@ -153,12 +153,12 @@ use Roots\Sage\Extras;
 		update_post_meta( $post->ID, 'puredemo_page_hero', $hero );
 
 	}
-	add_action('save_post', 'keel_save_page_hero_textarea', 1, 2);
+	add_action('save_post', 'puredemo_save_page_hero_textarea', 1, 2);
 
 
 
 	// Save the data with revisions
-	function keel_save_revisions_page_hero_textarea( $post_id ) {
+	function puredemo_save_revisions_page_hero_textarea( $post_id ) {
 
 		// Check if it's a revision
 		$parent_id = wp_is_post_revision( $post_id );
@@ -204,12 +204,12 @@ use Roots\Sage\Extras;
 		}
 
 	}
-	add_action( 'save_post', 'keel_save_revisions_page_hero_textarea' );
+	add_action( 'save_post', 'puredemo_save_revisions_page_hero_textarea' );
 
 
 
 	// Restore the data with revisions
-	function keel_restore_revisions_page_hero_textarea( $post_id, $revision_id ) {
+	function puredemo_restore_revisions_page_hero_textarea( $post_id, $revision_id ) {
 
 		// Variables
 		$post = get_post( $post_id );
@@ -249,12 +249,12 @@ use Roots\Sage\Extras;
 		update_post_meta( $post_id, 'puredemo_page_hero', $hero );
 
 	}
-	add_action( 'wp_restore_post_revision', 'keel_restore_revisions_page_hero_textarea', 10, 2 );
+	add_action( 'wp_restore_post_revision', 'puredemo_restore_revisions_page_hero_textarea', 10, 2 );
 
 
 
 	// Get the data to display the revisions page
-	function keel_get_revisions_field_page_hero_textarea( $fields ) {
+	function puredemo_get_revisions_field_page_hero_textarea( $fields ) {
 		$fields['puredemo_page_hero_content'] = 'Page Hero Content';
 		$fields['puredemo_page_hero_content_markdown'] = 'Page Hero Markdown Content';
 		$fields['puredemo_page_hero_image'] = 'Page Hero Image or Video';
@@ -264,21 +264,21 @@ use Roots\Sage\Extras;
 		$fields['puredemo_page_hero_overlay_styling'] = 'Page Hero Overlay Styling';
 		return $fields;
 	}
-	add_filter( '_wp_post_revision_fields', 'keel_get_revisions_field_page_hero_textarea' );
+	add_filter( '_wp_post_revision_fields', 'puredemo_get_revisions_field_page_hero_textarea' );
 
 
 
 	// Display the data on the revisions page
-	function keel_display_revisions_field_page_hero_textarea( $value, $field ) {
+	function puredemo_display_revisions_field_page_hero_textarea( $value, $field ) {
 		global $revision;
 		return get_metadata( 'post', $revision->ID, $field, true );
 	}
-	add_filter( '_wp_post_revision_field_my_meta', 'keel_display_revisions_field_page_hero_textarea', 10, 2 );
+	add_filter( '_wp_post_revision_field_my_meta', 'puredemo_display_revisions_field_page_hero_textarea', 10, 2 );
 
 
 
 	// Load required scripts and styles
-	function keel_add_page_hero_scripts( $hook ) {
+	function puredemo_add_page_hero_scripts( $hook ) {
 
 		global $typenow;
 		if ( in_array( $typenow, array( 'page', 'post' ) ) ) {
@@ -288,15 +288,15 @@ use Roots\Sage\Extras;
 			wp_register_script( 'meta-box-image', get_template_directory_uri() . '/lib/page-hero/page-hero.js', array( 'jquery' ) );
 			wp_localize_script( 'meta-box-image', 'meta_image',
 				array(
-					'title' => __( 'Choose or Upload an Image', 'keel' ),
-					'button' => __( 'Use this image', 'keel' ),
+					'title' => __( 'Choose or Upload an Image', 'puredemo' ),
+					'button' => __( 'Use this image', 'puredemo' ),
 				)
 			);
 			wp_enqueue_script( 'meta-box-image' );
 		}
 
 	}
-	add_action( 'admin_enqueue_scripts', 'keel_add_page_hero_scripts', 10, 1 );
+	add_action( 'admin_enqueue_scripts', 'puredemo_add_page_hero_scripts', 10, 1 );
 
 
 
