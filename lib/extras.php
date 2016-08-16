@@ -74,3 +74,19 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 		return $content;
 
 	}
+
+/**
+ * Appends our custom CSS to the global kirki-generated CSS.
+ *
+ * @return string
+ */
+function aristath_add_custom_css_to_dynamic_css( $css ) {
+    // Get the custom CSS
+    $custom_css = get_theme_mod( 'puredemo_custom_css', '.header {border: 3px solid lime;}' );
+    // Append our custom CSS to the Kirki-generated custom-css
+    // and return the result
+
+    return $css . $custom_css;
+}
+// Please make sure you replace "my_config" with your actual config-id.
+add_filter( 'kirki/pure-demo/dynamic_css', __NAMESPACE__ . '\\aristath_add_custom_css_to_dynamic_css' );

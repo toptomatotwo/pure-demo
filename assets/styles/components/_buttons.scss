@@ -1,0 +1,19 @@
+/**
+ * Ghosted buttons
+ */
+.btn-ghost {
+	background-color: transparent;
+	border-color: $color-white;
+
+	&:hover,
+	a &:hover,
+	&:focus,
+	a &:focus,
+	&:active,
+	a &:active,
+	&.active {
+		background-color: $color-white;
+		border-color: $color-white;
+		color: $color-black;
+	}
+}

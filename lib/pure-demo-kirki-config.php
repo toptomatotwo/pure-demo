@@ -57,6 +57,12 @@ endif;
 		'description' => __( 'This is the section description', 'pure-demo' ),
 	) );
 
+		$wp_customize->add_section( 'text_section', array(
+		'title'       => __( 'Custom CSS', 'pure-demo' ),
+		'priority'    => 0,
+		'description' => __( 'This is the section description', 'pure-demo' ),
+	) );
+
 }
 add_action( 'customize_register', 'kirki_demo_sections' );
 
@@ -125,44 +131,8 @@ function kirki_text_controls_fields( $fields ) {
 	);
 
 	$fields[] = array(
-		'type'        => 'textarea',
-		'settings'    => 'textarea_demo',
-		'label'       => __( 'Textarea', 'pure-demo' ),
-		'description' => __( 'This is the control description', 'pure-demo' ),
-		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
-		'section'     => 'text_section',
-		'default'     => 'This is some default text',
-		'priority'    => 10,
-	);
-
-	$fields[] = array(
-		'type'        => 'editor',
-		'settings'    => 'wysiwyg',
-		'label'       => __( 'Editor', 'pure-demo' ),
-		'description' => __( 'This is the control description', 'pure-demo' ),
-		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
-		'default'     => '',
-		'section'     => 'text_section',
-	);
-
-	$fields[] = array(
 		'type'        => 'code',
-		'settings'    => 'code_monokai',
-		'label'       => __( 'Code-CSS-Monokai', 'pure-demo' ),
-		'description' => __( 'This is the control description', 'pure-demo' ),
-		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
-		'default'     => '',
-		'section'     => 'text_section',
-		'choices'     => array(
-			'theme'    => 'monokai',
-			'language' => 'css',
-			'height'   => 250,
-		)
-	);
-
-	$fields[] = array(
-		'type'        => 'code',
-		'settings'    => 'code_chrom',
+		'settings'    => 'puredemo_custom_css',
 		'label'       => __( 'Code-HTML-Chrome', 'pure-demo' ),
 		'description' => __( 'This is the control description', 'pure-demo' ),
 		'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'pure-demo' ),
@@ -871,7 +841,6 @@ $fields[] = array(
         ),
     ),
 );
-
 
 /* adding header_logo_setting field */
 Puredemo_Kirki::add_field( 'pure-demo', array(

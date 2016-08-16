@@ -63,7 +63,56 @@ textarea {
     padding: 0;
 }
 
+/**
+ * @section Overrides
+ * Nudge and tweak alignment, spacing, and visibility.
+ * from Harbour Theme
+ */
 
+
+/**
+ * Backgrounds
+ */
+
+.bg-muted {
+	background-color: lighten( $color-gray-light, 5% );
+}
+
+.bg-dark {
+	background-color: $color-black;
+	color: $color-white;
+
+	a {
+		color: $color-gray-light;
+		text-decoration: underline;
+
+		&.link-block {
+			text-decoration: none;
+		}
+
+		&.link-block-styled {
+			text-decoration: underline;
+		}
+
+		&:active,
+		&:focus,
+		&:hover {
+			color: $color-white;
+		}
+	}
+
+	.btn {
+		@extend .btn-ghost;
+		color: $color-white;
+		text-decoration: none;
+	}
+}
+
+.bg-hero {
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+}
 
 /**
  *  Nav
