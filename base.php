@@ -16,11 +16,6 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <!-- next line recommended for vanilla javascript menu -->
     <script type="text/javascript">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.body;var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg," js-enabled")}</script>
-    <?php     $theme_settings = get_option('pure_demo_theme_options'); ?>
-
-    <style type="text/css">
-
-    </style>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
