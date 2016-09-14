@@ -22,7 +22,7 @@
 .entry-content {
   max-width: 30em;
   /* Anywhere between 22.5em to 37.5em. Use your discretion */
-  //margin-right: 1em;
+  margin-right: .8em;
 }
 
 /**
@@ -245,19 +245,24 @@ li.comment {
 	.site-title {
 	  font-size: 3em;
 	}
+}
 
-	.entry-content p, .entry-summary p {
-    //font-size: 1rem;
+@media (min-width: map-get($breakpoints, medium)) {
+  .entry-content {
+    max-width: 37.5em;
+    /* Anywhere between 22.5em to 37.5em. Use your discretion */
+  }
+  h1.entry-title {
+    margin: 0.3em 0;
+  }
+  time, p.author, p.byline {
+    margin: 0.3em 0;
   }
 }
 
 
 .entry-content p, .entry-summary p {
   //@include font-size($p-font-sizes);
-  @include typi-base();
-}
-
-html {
   @include typi-base();
 }
 
