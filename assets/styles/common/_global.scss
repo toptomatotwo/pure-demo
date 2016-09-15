@@ -331,7 +331,11 @@ img.aligncenter {
     letter-spacing: 1px;
   }
 
-
+form {
+  p, input {
+    max-width: 100%;
+  }
+}
 
 /**
  * Media Queries

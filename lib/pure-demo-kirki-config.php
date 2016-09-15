@@ -290,22 +290,22 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 Puredemo_Kirki::add_field( 'pure-demo', array(
 	'type'        => 'color-alpha',
 	'settings'    => 'header_bg_color',
-	'label'       => __( 'Header Background', 'pure-demo' ),
-	'description' => __( 'This is the color of the main space across the top of the site.', 'pure-demo' ),
+	'label'       => __( 'Header &amp; Footer Background', 'pure-demo' ),
+	'description' => __( 'This is the color of the main space across the top and bottom of the site.', 'pure-demo' ),
 	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
 	'section'     => 'color_section',
 	'default'     => '#a9bfcc',
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => '#header',
+			'element'  => '#header .content-info',
 			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
 		array(
-			'element'  => '#header',
+			'element'  => '#header .content-info',
 			'function' => 'css',
 			'property' => 'background-color',
 		),
