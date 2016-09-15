@@ -149,7 +149,8 @@ namespace Roots\Sage\HeroRender;
 		$min_height = ( empty( $hero['min_height'] ) ? '' : 'min-height: ' . $hero['min_height'] . '; ' );
 
 		?>
-		<div class="bg-hero bg-dark text-shadow margin-bottom" style="min-height: 300px; background-image: linear-gradient( rgba(255, 0, 64, 0.41), rgba(255, 0, 64, 0.41) ), url(/wp/wp-content/uploads/2015/11/pic1.png);">
+		<div class="bg-hero <?php echo ( empty( $hero['img'] ) ? 'bg-muted' : 'bg-dark text-shadow' ); ?> margin-bottom" <?php if ( !empty( $hero['img'] ) ) { echo 'style="' . ( empty( $hero['min_height'] ) ? '' : 'min-height: ' . $hero['min_height'] . '; ' ) . 'background-image: ' . ( empty( $hero['overlay'] ) ? '' : 'linear-gradient( '.$value_type .'(' . $overlay . ', ' . $transparency . '), '.$value_type .'(' . $overlay . ', ' . $transparency . ') ),' ) . ' url(' . $hero['img'][0] . ');"'; } ?>>
+
 					<div class="container <?php if ( !empty( $hero['content'] ) && !empty( $image ) ) { echo 'container-large'; } ?> <?php echo ( !empty( $hero['img'] ) && is_array( $hero['img'] ) && ( empty( $hero['content'] ) || empty( $image ) ) ? 'padding-top-xlarge padding-bottom-xlarge' : 'padding-top padding-bottom' ); ?>">
 <?php
 							// If there's hero content AND video
