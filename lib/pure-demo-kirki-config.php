@@ -294,7 +294,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'description' => __( 'This is the color of the main space across the top of the site.', 'pure-demo' ),
 	'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users.', 'pure-demo' ),
 	'section'     => 'color_section',
-	'default'     => '#0088cc',
+	'default'     => '#a9bfcc',
 	'priority'    => 10,
 	'output'      => array(
 		array(
@@ -319,7 +319,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'description' => __( 'Set color of main site content background here.', 'pure-demo' ),
 	'help'        => __( 'Remember this will be on all pages.', 'pure-demo' ),
 	'section'     => 'color_section',
-	'default'     => '#0088cc',
+	'default'     => '#ffffff',
 	'priority'    => 10,
 	'output'      => array(
 		array(
@@ -345,7 +345,7 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'description' => __( 'Background for main nav menu in header.', 'pure-demo' ),
 	'help'        => __( 'Set right bar to bottom for transparent.', 'pure-demo' ),
 	'section'     => 'color_section',
-	'default'     => '#0088cc',
+	'default'     => '#a9bfcc',
 	'priority'    => 10,
 	'output'      => array(
 		array(
@@ -484,6 +484,31 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'js_vars'     => array(
 		array(
 			'element'  => '.site-description',
+			'function' => 'css',
+			'property' => 'color',
+		),
+	)
+) );
+
+Puredemo_Kirki::add_field( 'pure-demo', array(
+	'type'        => 'color-alpha',
+	'settings'    => 'header_text_color',
+	'label'       => __( 'Heading Text Color', 'pure-demo' ),
+	'description' => __( 'Color of all headings.', 'pure-demo' ),
+	'help'        => __( 'These are the bold items that take up their own horizontal space.', 'pure-demo' ),
+	'section'     => 'color_section',
+	'default'     => '#ffffff',
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element'  => 'h1, h2, 3, h4, h5, h6',
+			'property' => 'color',
+		),
+	),
+	'transport'   => 'postMessage',
+	'js_vars'     => array(
+		array(
+			'element'  => 'h1, h2, 3, h4, h5, h6',
 			'function' => 'css',
 			'property' => 'color',
 		),
