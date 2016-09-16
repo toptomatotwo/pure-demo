@@ -106,3 +106,12 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+
+/*
+ * Declare WooCommerce support
+ * Source: https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+ */
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}

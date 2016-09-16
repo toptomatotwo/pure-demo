@@ -92,3 +92,10 @@ function aristath_add_custom_css_to_dynamic_css( $css ) {
 }
 // Please make sure you replace "my_config" with your actual config-id.
 add_filter( 'kirki/pure-demo/dynamic_css', __NAMESPACE__ . '\\aristath_add_custom_css_to_dynamic_css' );
+
+/* Remove woocommerce title page and product summaries
+ * Source: https://roots.io/using-woocommerce-with-sage/
+ */
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+
