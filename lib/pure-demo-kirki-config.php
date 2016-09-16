@@ -298,14 +298,14 @@ Puredemo_Kirki::add_field( 'pure-demo', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element'  => '#header .content-info',
+			'element'  => '#header, .content-info',
 			'property' => 'background-color',
 		),
 	),
 	'transport'   => 'postMessage',
 	'js_vars'     => array(
 		array(
-			'element'  => '#header .content-info',
+			'element'  => '#header, .content-info',
 			'function' => 'css',
 			'property' => 'background-color',
 		),

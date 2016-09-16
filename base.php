@@ -28,7 +28,8 @@ use Roots\Sage\Wrapper;
     <div class="wrap" role="document">
 
       <div class="content pure-g">
-        <main class="main pure-u-1 pure-u-md-4-5">
+      <?php $main_grid_eighty_percent = (Setup\display_sidebar() == 1) ? 'pure-u-md-4-5' : ''; ?>
+        <main class="main pure-u-1 <?=$main_grid_eighty_percent?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
