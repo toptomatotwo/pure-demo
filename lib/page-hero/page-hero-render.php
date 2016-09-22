@@ -127,8 +127,8 @@ namespace Roots\Sage\HeroRender;
 
 		$page_header = get_post_meta( $post->ID, 'puredemo_page_header', true );
 
-		// If no hero, bail
-		if ( empty( $hero['content'] ) && empty( $hero['image'] ) && empty( $hero['img'] ) ) return;
+		// If product page or no hero, bail
+		if ( get_post_type($post_id) == 'product' || empty( $hero['content'] ) && empty( $hero['image'] ) && empty( $hero['img'] ) ) return;
 
 		// Get hero image
 		$check_image = wp_check_filetype( $hero['image'] );
