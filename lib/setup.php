@@ -7,6 +7,7 @@ use Roots\Sage\Assets;
 /**
  * Theme setup
  */
+
 function setup() {
   // Enable features from Soil when plugin is activated
   // https://roots.io/plugins/soil/
@@ -15,6 +16,11 @@ function setup() {
   add_theme_support('soil-nice-search');
   add_theme_support('soil-jquery-cdn');
   add_theme_support('soil-relative-urls');
+
+  @ini_set( 'upload_max_size' , '64M' );
+  @ini_set( 'post_max_size', '64M');
+  @ini_set( 'max_execution_time', '300' );
+
 
   // Make theme available for translation
   // Community translations can be found at https://github.com/roots/sage-translations
