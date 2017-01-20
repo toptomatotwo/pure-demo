@@ -14,3 +14,4 @@
 		<?php printf( __( 'Site by %1$s.', 'pure-demo' ), '<a href="http://www.mzoo.org" rel="designer">Mike iLL/mZoo.org</a>'  ); ?>
 	</div>
 </footer>
+

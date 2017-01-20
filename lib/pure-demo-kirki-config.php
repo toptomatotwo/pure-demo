@@ -58,7 +58,7 @@ endif;
 	) );
 
 		$wp_customize->add_section( 'text_section', array(
-		'title'       => __( 'Custom CSS', 'pure-demo' ),
+		'title'       => __( 'Custom CSS & JS', 'pure-demo' ),
 		'priority'    => 0,
 		'description' => __( 'This is the section description', 'pure-demo' ),
 	) );
@@ -117,7 +117,7 @@ add_filter( 'kirki/fields', 'kirki_file_controls_fields' );
 /**
  * Add text fields
  */
-function kirki_text_controls_fields( $fields ) {
+function puredemo_css_controls( $fields ) {
 
 	$fields[] = array(
 		'type'        => 'code',
@@ -137,7 +137,32 @@ function kirki_text_controls_fields( $fields ) {
 	return $fields;
 
 }
-add_filter( 'kirki/fields', 'kirki_text_controls_fields' );
+add_filter( 'kirki/fields', 'puredemo_css_controls' );
+
+/**
+ * Add text fields
+ */
+function puredemo_script_controls( $fields ) {
+
+	$fields[] = array(
+		'type'        => 'code',
+		'settings'    => 'puredemo_custom_js',
+		'label'       => __( 'Code-JS-Chrome', 'pure-demo' ),
+		'description' => __( 'Add custom javascript for the site here.', 'pure-demo' ),
+		'help'        => __( 'Example of JS script would be: `$(document).ready(function() {alert("hi");});`.', 'pure-demo' ),
+		'default'     => '',
+		'section'     => 'text_section',
+		'choices'     => array(
+			'theme'    => 'chrome',
+			'language' => 'html',
+			'height'   => 250,
+		)
+	);
+
+	return $fields;
+
+}
+add_filter( 'kirki/fields', 'puredemo_script_controls' );
 
 /**
  * Add numeric fields

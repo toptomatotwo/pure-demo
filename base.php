@@ -49,5 +49,11 @@ use Roots\Sage\Wrapper;
             wrapper: document.querySelector('.navigation_container')
         });
     </script>
+    <?php
+    $value = Kirki::get_option( $config_id, 'puredemo_custom_js' );
+    echo '<script type="text/javascript">';
+    echo $value;
+    echo '</script>';
+    ?>
   </body>
 </html>

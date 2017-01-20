@@ -27,3 +27,4 @@ use  Roots\Sage\HeroRender;
     </nav>
   </header>
 </div><?php HeroRender\puredemo_get_her(); ?>
+

@@ -14,3 +14,4 @@
 <?php get_sidebar(); ?>
 
 <?php the_posts_navigation(); ?>
+
