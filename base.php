@@ -28,12 +28,12 @@ use Roots\Sage\Wrapper;
     <div class="wrap" role="document">
 
       <div class="content pure-g">
-      <?php $main_grid_eighty_percent = (Setup\display_sidebar() == 1) ? 'pure-u-md-4-5' : ''; ?>
+      <?php $main_grid_eighty_percent = (Setup\display_sidebar() == 1) ? 'pure-u-md-16-24 pure-u-lg-18-24' : ''; ?>
         <main class="main pure-u-1 <?=$main_grid_eighty_percent?>">
           <?php include Wrapper\template_path(); ?>
         </main><!-- /.main -->
         <?php if (Setup\display_sidebar()) : ?>
-          <aside class="sidebar pure-u-1 pure-u-md-1-5">
+          <aside class="sidebar pure-u-1 pure-u-md-8-24 pure-u-lg-6-24">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
