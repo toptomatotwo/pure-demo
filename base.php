@@ -50,7 +50,7 @@ use Roots\Sage\Wrapper;
         });
     </script>
     <?php
-    $value = Kirki::get_option( $config_id, 'puredemo_custom_js' );
+    $value = Kirki::get_option( 'puredemo', 'puredemo_custom_js' );
     echo '<script type="text/javascript">';
     echo $value;
     echo '</script>';
