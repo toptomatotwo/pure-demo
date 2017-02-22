@@ -858,7 +858,7 @@ $fields[] = array(
 
 $fields[] = array(
     'type'        => 'select',
-    'setting'     => 'font_family_body',
+    'settings'     => 'font_family_body',
     'label'       => __( 'Global Font-Family for site text', 'kirki' ),
     'description' => __( 'Please choose a font for your site\'s paragraphs in regular content', 'kirki' ),
     'section'     => 'site_typography',
