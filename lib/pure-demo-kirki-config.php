@@ -833,7 +833,7 @@ function kirki_site_typography_fields( $fields ) {
 
 $fields[] = array(
     'type'        => 'select',
-    'setting'     => 'font_family_headers',
+    'settings'     => 'font_family_headers',
     'label'       => __( 'Global Font-Family for Headers', 'kirki' ),
     'description' => __( 'Please choose a font for your site. This font-family will be applied to all headers.', 'kirki' ),
     'section'     => 'site_typography',
