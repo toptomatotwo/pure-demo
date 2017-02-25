@@ -32,4 +32,3 @@ foreach ($sage_includes as $file) {
 }
 unset($file, $filepath);
 
-
