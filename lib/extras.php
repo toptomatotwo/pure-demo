@@ -97,5 +97,55 @@ add_filter( 'kirki/pure-demo/dynamic_css', __NAMESPACE__ . '\\aristath_add_custo
  * Source: https://roots.io/using-woocommerce-with-sage/
  */
 add_filter( 'woocommerce_show_page_title', '__return_false' );
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action('woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_single_title', 5);
+
+/*
+Plugin Name: My WooCommerce Modifications
+Plugin URI: http://woothemes.com/
+Description: Modificatinos to my WooCommerce site
+Version: 1.0
+Author: Patrick Rauland
+Author URI: http://www.patrickrauland.com/
+License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Source: https://gist.github.com/BFTrick/4996955
+*/
+/*  Copyright 2013  Patrick Rauland
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+
+/**
+ * Check if WooCommerce is active
+ **/
+// Remove from this if using as a plugin
+//if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+
+    // remove default woocommerce actions
+    function my_woocommerce_modifications()
+    {
+        // hide product price on category page
+        remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+
+        // hide add to cart button on category page
+        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+    }
+
+    add_action( 'init', __NAMESPACE__ . '\\my_woocommerce_modifications' );
+
+//}
+
+
 

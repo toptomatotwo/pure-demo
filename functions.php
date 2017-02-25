@@ -19,7 +19,8 @@ $sage_includes = [
   'lib/include-kirki.php', // Add a mess of options for the theme
   'lib/pure-demo-kirki.php', // Include kirki classes
   'lib/pure-demo-kirki-config.php', // Include our custom Kirki Configuration File
-  'lib/page-hero/page-hero.php' // Include our custom Kirki Configuration File
+  'lib/page-hero/page-hero.php', // Include our custom Kirki Configuration File
+  'cpt/post-types.php' // Borrowed from Iron Templates
 ];
 
 foreach ($sage_includes as $file) {
@@ -30,3 +31,5 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+
