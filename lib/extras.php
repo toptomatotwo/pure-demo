@@ -247,3 +247,4 @@ function woo_remove_product_tabs( $tabs ) {
 }
 add_filter( 'woocommerce_product_tabs', __NAMESPACE__. '\\woo_remove_product_tabs', 98 );
 
+
