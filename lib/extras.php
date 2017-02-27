@@ -159,8 +159,9 @@ function wpse_allowedtags() {
 if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
 
     function wpse_custom_wp_trim_excerpt($wpse_excerpt) {
-    die("running");
+
     $raw_excerpt = $wpse_excerpt;
+
         if ( '' == $wpse_excerpt ) {
 
             $wpse_excerpt = get_the_content('');
@@ -210,14 +211,39 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
             return $wpse_excerpt;
 
         }
-        return apply_filters('wpse_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
+        return apply_filters(__NAMESPACE__ . '\\wpse_custom_wp_trim_excerpt', $wpse_excerpt, $raw_excerpt);
     }
 
 endif;
 
-remove_filter('get_the_excerpt', __NAMESPACE__. '//wp_trim_excerpt');
-add_filter('get_the_excerpt', __NAMESPACE__. '//wpse_custom_wp_trim_excerpt');
+remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+add_filter('get_the_excerpt', __NAMESPACE__ . '\\wpse_custom_wp_trim_excerpt');
 
+/**
+ * Show full description in single product page, not excerpt.
+ * Source: http://stackoverflow.com/a/22636114/2223106
+ **/
+function woocommerce_template_product_description() {
+  wc_get_template( 'single-product/tabs/description.php' );
+}
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_product_description', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 50 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
+function woo_remove_product_tabs( $tabs ) {
+
+  unset( $tabs['description'] );        // Remove the description tab
+  unset( $tabs['reviews'] );            // Remove the reviews tab
+  unset( $tabs['additional_information'] );      // Remove the additional information tab
+
+  return $tabs;
+
+}
+add_filter( 'woocommerce_product_tabs', __NAMESPACE__. '\\woo_remove_product_tabs', 98 );
 
