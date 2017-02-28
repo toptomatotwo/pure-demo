@@ -93,60 +93,6 @@ function aristath_add_custom_css_to_dynamic_css( $css ) {
 // Please make sure you replace "my_config" with your actual config-id.
 add_filter( 'kirki/pure-demo/dynamic_css', __NAMESPACE__ . '\\aristath_add_custom_css_to_dynamic_css' );
 
-/* Remove woocommerce title page and product summaries
- * Source: https://roots.io/using-woocommerce-with-sage/
- */
-add_filter( 'woocommerce_show_page_title', '__return_false' );
-remove_action('woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_single_title', 5);
-
-/*
-Plugin Name: My WooCommerce Modifications
-Plugin URI: http://woothemes.com/
-Description: Modificatinos to my WooCommerce site
-Version: 1.0
-Author: Patrick Rauland
-Author URI: http://www.patrickrauland.com/
-License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-Source: https://gist.github.com/BFTrick/4996955
-*/
-/*  Copyright 2013  Patrick Rauland
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-
-/**
- * Check if WooCommerce is active
- **/
-// Remove from this if using as a plugin
-//if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-
-
-    // remove default woocommerce actions
-    function my_woocommerce_modifications()
-    {
-        // hide product price on category page
-        remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
-
-        // hide add to cart button on category page
-        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
-    }
-
-    add_action( 'init', __NAMESPACE__ . '\\my_woocommerce_modifications' );
-
-//}
-
 /**
  * Allow HTML in short description/excerpts.
  * Source: http://wordpress.stackexchange.com/questions/141125/allow-html-in-excerpt
@@ -219,38 +165,99 @@ endif;
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', __NAMESPACE__ . '\\wpse_custom_wp_trim_excerpt');
 
+/*** Begin WooCommerce Customization ***/
+
+/*
+Plugin Name: My WooCommerce Modifications
+Plugin URI: http://woothemes.com/
+Description: Modificatinos to my WooCommerce site
+Version: 1.0
+Author: Patrick Rauland
+Author URI: http://www.patrickrauland.com/
+License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Source: https://gist.github.com/BFTrick/4996955
+*/
+/*  Copyright 2013  Patrick Rauland
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
+
+/**
+ * Check if WooCommerce is active
+ **/
+// Remove from this if using as a plugin
+//if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+
+// remove default woocommerce actions
+function pure_demo_woocommerce_modifications()
+{
+    // hide product price on category page
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+
+    // hide add to cart button on category page
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 50 );
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+}
+
+add_action( 'init', __NAMESPACE__ . '\\pure_demo_woocommerce_modifications' );
+
+
 /**
  * Show full description in single product page, not excerpt.
  * Source: http://stackoverflow.com/a/22636114/2223106
  **/
-function woocommerce_template_product_description() {
+function pure_demo_woocommerce_template_product_description() {
   wc_get_template( 'single-product/tabs/description.php' );
 }
+/* I think we do want tab for description so takes entire width. */
+//add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\pure_demo_woocommerce_template_product_description', 60 );
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-add_action( 'woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_product_description', 20 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 50 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+/**
+ * Change the heading title on the "Product Description" tab section for single products.
+ * Source: https://isabelcastillo.com/change-product-description-title-woocommerce
+ */
+function pure_demo_product_description_heading() {
+    return 'More About This Project';
+}
 
-function woo_remove_product_tabs( $tabs ) {
+add_filter( 'woocommerce_product_description_tab_title', __NAMESPACE__ . '\\pure_demo_product_description_heading' );
 
-  unset( $tabs['description'] );        // Remove the description tab
+function pure_demo_woo_remove_product_tabs( $tabs ) {
+
+  //unset( $tabs['description'] );        // Remove the description tab
   unset( $tabs['reviews'] );            // Remove the reviews tab
   unset( $tabs['additional_information'] );      // Remove the additional information tab
 
   return $tabs;
 
 }
-add_filter( 'woocommerce_product_tabs', __NAMESPACE__. '\\woo_remove_product_tabs', 98 );
+add_filter( 'woocommerce_product_tabs', __NAMESPACE__. '\\pure_demo_woo_remove_product_tabs', 98 );
 
 /**
  * Change the Shop archive page title.
  * @param  string $title
  * @return string
+ *
+ * Source: https://nicola.blog/2016/03/29/change-shop-page-title/
  */
 function wc_pure_demo_archive_title( $title ) {
     if ( is_shop() && isset( $title['title'] ) ) {
@@ -260,3 +267,12 @@ function wc_pure_demo_archive_title( $title ) {
     return $title;
 }
 add_filter( 'document_title_parts', 'wc_pure_demo_archive_title' );
+
+/* Remove woocommerce title page and product summaries
+ * Source: https://roots.io/using-woocommerce-with-sage/
+ */
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+remove_action('woocommerce_single_product_summary', __NAMESPACE__ . '\\woocommerce_template_single_title', 5);
+
+//}
+/*** End WooCommerce Customization ***/
