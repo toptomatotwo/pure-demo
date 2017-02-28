@@ -247,4 +247,16 @@ function woo_remove_product_tabs( $tabs ) {
 }
 add_filter( 'woocommerce_product_tabs', __NAMESPACE__. '\\woo_remove_product_tabs', 98 );
 
+/**
+ * Change the Shop archive page title.
+ * @param  string $title
+ * @return string
+ */
+function wc_pure_demo_archive_title( $title ) {
+    if ( is_shop() && isset( $title['title'] ) ) {
+        $title['title'] = 'Discography';
+    }
 
+    return $title;
+}
+add_filter( 'document_title_parts', 'wc_pure_demo_archive_title' );
