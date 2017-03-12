@@ -21,7 +21,7 @@ use  Roots\Sage\HeroRender;
        * The menu_class argument breaks if there is no menu activated in the WordPress Admin
        */
         if ( has_nav_menu( 'primary_navigation' ) ) :
-           wp_nav_menu(['theme_location' => 'primary_navigation']);
+           wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'rm-closed']);
         endif;
       ?>
     </nav>
