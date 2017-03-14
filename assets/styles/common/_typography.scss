@@ -15,8 +15,26 @@
 	src: url('../fonts/introheadb-h2base-webfont.ttf');
 }
 
+@font-face {
+    font-family: 'sundayregular';
+    src: url('../fonts/sunday-webfont.woff2') format('woff2'),
+         url('../fonts/sunday-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+	font-family: 'Rosario', Verdana, Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+	font-weight: bold;
+	text-align: center;
+}
+
 .site-title {
   font-size: 2em;
+  font-family:'sundayregular';
 }
 
 .entry-content {
@@ -83,7 +101,8 @@ article {
 
 a {
 	text-decoration: none;
-	color: rgba(125, 149, 155, 1);
+	/* color: rgba(125, 149, 155, 1); */
+	color:$or-red;
 }
 a:hover,
 a:focus {

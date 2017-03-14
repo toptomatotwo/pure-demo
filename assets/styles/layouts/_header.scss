@@ -13,8 +13,10 @@
  */
 
 .header {
-	background: rgb(61, 79, 93);
-	color: #fff;
+	background: $fade-yellow;
+	color: $or-red;
+	padding-top: 2em;
+	border-bottom: 1px solid #ccc;
 }
 
 /* These are ".brand-title" and ".brand-tagline" in the Pure CSS example. */
@@ -25,12 +27,13 @@
 
 .site-title {
 	text-transform: uppercase;
-	color: #fff;
+	color: $logo-purple;
 }
 
+.site-title a,
 .site-title a:hover,
 .site-title a:focus {
-	color: rgba(125, 149, 155, 1);
+	color: $logo-purple;
 	text-decoration: none;
 }
 .site-description {
