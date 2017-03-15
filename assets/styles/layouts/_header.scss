@@ -15,9 +15,46 @@
 .header {
 	background: $fade-yellow;
 	color: $or-red;
-	padding-top: 2em;
+	padding-top: 1em;
 	border-bottom: 1px solid #ccc;
 }
+
+.site-title-div {
+	display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1.site-title {
+	margin:0 !important;
+	padding:0 !important;
+  	font-family:'sundayregular';
+  	@media (min-width: 35.5em) {
+			font-size: 2.7em;
+		
+	}
+	@media (max-width: 567px) {
+		font-size:1.5em;
+	}
+}
+/*
+.branding-logo-1, .branding-logo-2 {
+	@media screen and (min-width: 568px) {
+  		display:block;
+  	}
+  	
+  @media screen and (max-width: 567px) {
+  		display:none;
+  	}
+}
+*/
+.branding-logo-1 img, .branding-logo-2 img  {
+	width:70%;
+ 	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	}
+
 
 /* These are ".brand-title" and ".brand-tagline" in the Pure CSS example. */
 .site-title,

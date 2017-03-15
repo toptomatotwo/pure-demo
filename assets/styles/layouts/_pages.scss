@@ -1,14 +1,80 @@
+/* GLOBAL */
+.wrap {
+	@media screen and (min-width: 35.5em) { /*sm*/
+		width:100%;
+	}
+	@media screen and (min-width: 48em) { /*md*/
+		width: 960px;	
+		margin: 0 auto;
+    	display: block;
+	}
+	@media screen and (min-width: 64em) { /*lg*/
+		width: 960px;
+		margin: 0 auto;
+    	display: block;
+	}
+	
+    border-left:1px solid $logo-green;
+    border-right:1px solid $logo-green;
+}
+
+/*MULTIPLE */
+body.schedule, body.about, body.get-involved, body.contact {
+	.wrap {
+		background:url('http://ohya.dev/wp/wp-content/img/bg-swirl-orange.png');
+	}
+ 
+	h2 {
+		font-family:'architects_daughterregular', Verdana;
+		color:$logo-green;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+
 /*HOME */
 #homepage_banner {
-	width:70%;
+	width:100%;
 	margin:0 auto;
 	display: block;
 }
 
 h2.mission_statement {
 	margin-bottom: .75em;
+	font-family: 'architects_daughterregular';
 }
 p.mission_statement {
-	color:$logo-purple;
-	text-align: justify;
+	color: #333;
+    text-align: justify;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+#pure-demo {
+	color:#fff;
+	background-color:blue;
+}
+
+#pure-demo div {
+	height:50px;
+	border:1px solid #333;
+}
+
+/* SCHEDULE */
+ul#schedule {
+	list-style-type: none;
+	font-family: 'Rosario', Helvetica;
+	span.time {
+		color:$or-red;
+		font-weight:bold;
+	}
+
+}
+
+
+/* GET INVOLVED */
+.pdf_icon {
+	width:40px;
 }

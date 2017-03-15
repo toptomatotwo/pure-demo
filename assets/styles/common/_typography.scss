@@ -15,14 +15,6 @@
 	src: url('../fonts/introheadb-h2base-webfont.ttf');
 }
 
-@font-face {
-    font-family: 'sundayregular';
-    src: url('../fonts/sunday-webfont.woff2') format('woff2'),
-         url('../fonts/sunday-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 p {
 	font-family: 'Rosario', Verdana, Arial, sans-serif;
 }
@@ -32,10 +24,7 @@ h1, h2, h3, h4 {
 	text-align: center;
 }
 
-.site-title {
-  font-size: 2em;
-  font-family:'sundayregular';
-}
+
 
 .entry-content {
   max-width: 30em;
@@ -265,9 +254,6 @@ li.comment {
 		min-width: 1rem;
 	}
 
-	.site-title {
-	  font-size: 3em;
-	}
 }
 
 @media (min-width: map-get($breakpoints, medium)) {

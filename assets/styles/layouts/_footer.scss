@@ -1,3 +1,16 @@
 .site-info {
   font-size: 0.7em;
 }
+
+footer #menu-global-nav-1 {
+	font-weight:bold;
+	a {
+		color:$or-red;
+	}
+}
+
+li.social-media-footer img {
+	width:35px;
+	position: relative;
+	top:5px;
+}

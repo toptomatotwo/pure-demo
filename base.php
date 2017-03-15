@@ -36,7 +36,7 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
 
-    <div class="wrap" role="document">
+    <div class="wrap pure-u-1" role="document">
 
       <div class="content pure-g">
       <?php $main_grid_eighty_percent = (Setup\display_sidebar() == 1) ? 'pure-u-md-16-24 pure-u-lg-18-24' : ''; ?>
@@ -48,7 +48,9 @@ use Roots\Sage\Wrapper;
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
         <?php endif; ?>
+
       </div><!-- /.content -->
+      
     </div><!-- /.wrap -->
     <?php
       do_action('get_footer');
