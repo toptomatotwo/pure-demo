@@ -86,8 +86,10 @@
     }
   };
 
+  $('mc4wp-form-1').addClass('pure-form pure-form-stacked');
   // Load Events
   $(document).ready(UTIL.loadEvents);
+
 
 })(jQuery); // Fully reference jQuery after this point.
 

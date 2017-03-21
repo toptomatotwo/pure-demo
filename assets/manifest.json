@@ -4,7 +4,8 @@
       "files": [
         "scripts/main.js",
         "scripts/apollo.js",
-        "scripts/vanilla.responsive.menu.js"
+        "scripts/vanilla.responsive.menu.js",
+        "scripts/init.js"
       ],
       "main": true
     },

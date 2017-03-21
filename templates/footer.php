@@ -11,6 +11,7 @@
 </ul></div> 
   </div>
 
-	
+<script type="text/javascript" src="/wp/wp-content/themes/pure-heart/dist/scripts/init.js"></script>
+    	
 </footer>
 

@@ -33,7 +33,9 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <?php
       do_action('get_header');
-      get_template_part('templates/header');
+      if(!is_front_page()){
+        get_template_part('templates/header');
+      }
     ?>
 
     <div class="wrap pure-u-1" role="document">
@@ -53,9 +55,11 @@ use Roots\Sage\Wrapper;
       
     </div><!-- /.wrap -->
     <?php
+    if(!is_front_page()) {
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
+    }
     ?>
     <script type="text/javascript">
         responsivemenu.init({
@@ -68,5 +72,7 @@ use Roots\Sage\Wrapper;
     echo $value;
     echo '</script>';
     ?>
+    <script type="text/javascript" src="/wp/wp-content/themes/pure-heart/assets/scripts/init.js"></script>
+    huh?
   </body>
 </html>
